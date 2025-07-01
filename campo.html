@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Malaria UFMG</title>
+
+    <!-- link Estilos CSS -->
+    <link rel="stylesheet" href="Assets/style/styles.css">
+
+    <!-- link favicon -->
+    <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
+
+    <!-- link Slide -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+    <!-- link mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Botão de tradução que redireciona para a versão em inglês -->
+  <a href="Ingles/indexingles.html" class="translate-button">
+    <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
+  </a>
+
+
+  <!-- Logo do lab como cabeçalho  -->
+    <header>
+      <a href="index.html">
+          <img class="imagem" src="Assets/Logo_nova-removebg-preview.png" alt="Logo do Laboratório" title="Laboratório Malária UFMG">
+      </a>
+    </header>
+
+ <!-- Barra de Navegação -->
+  <nav class="container-navegacao">
+      <a href="index.html">Início</a>
+      
+      <!-- Submenu em "Quem Somos" -->
+      <div class="dropdown">
+        <a href="#">Quem Somos ▾</a>
+        <div class="dropdown-content">
+          <a href="quemsomos.html">Equipe</a>
+          <a href="galeria.html">Galeria</a>
+          <a href="campo.html">Trabalhos de campo</a>
+        </div>
+      </div>
+
+      
+
+      <!-- Submenu em "Linhas de Pesquisa" -->
+      <div class="dropdown">
+        <a href="#">Projetos ▾</a>
+        <div class="dropdown-content">
+          <a href="linhas.html">Linhas de Pesquisa</a>
+          <a href="Projetos.html">Projetos</a>
+          <a href="trabalhe.html">Oportunidades</a>
+        </div>
+      </div>
+
+      <a href="noticias.html">Notícias</a>
+      <a href="publicacao.html">Publicações</a>
+    
+      <!-- Submenu em "Coleção" -->
+      <div class="dropdown">
+        <a href="#">Coleção ▾</a>
+        <div class="dropdown-content">
+          <a href="colecao.html">Coleção</a>
+          <a href="acervoonline.html">Acervo Online</a>
+        </div>
+      </div>
+    
+      <a href="contato.html">Contato</a>
+  </nav>
+
+  <!-- Seção Principal -->
+  <h1>Conheça locais aonde coletamos amostras</h1>
+  <div class="map2-container">
+    <div id="map2"></div>
+  </div>
+
+  <script>
+    // Inicializa o mapa, definindo coordenadas centrais e nível de zoom
+    var map = L.map('map2').setView([-19.870, -43.967], 5); // ajuste para Brasil
+  
+    // Adiciona camada de mapa OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+  
+    // Exemplo de pontos de coleta:
+    var pontos = [
+      { nome: "Belo Horizonte", coords: [-19.8157, -43.9542],ano: 2023 },
+      { nome: "Manaus", coords: [-3.1190, -60.0217], ano: 2023 },
+      { nome: "Salvador", coords: [-12.9714, -38.5014], ano: 2024 },
+      { nome: "Paris", coords: [48.8566, 2.3522], ano: 2024 },
+      { nome: "Cananeia - SP", coords: [-25.015, -47.934], ano: 2025 },
+      { nome: "Florestal - MG", coords: [-19.8889, -44.4319], ano: 2024 },
+      { nome: "Felixlândia - MG", coords: [-18.7517, -44.8974], ano: 2025 },
+      { nome: "Brasília - DF", coords: [-15.7939, -47.8828], ano: 2024 },
+      { nome: "Tóquio - Japão", coords: [35.682839, 139.759455], ano: 2024 },
+      { nome: "Vila Velha - ES", coords: [-20.3417, -40.2875], ano: 2024 },
+      { nome: "UAST - Serra Talhada (PE)", coords: [-7.9833, -38.2897], ano: 2023 }
+    ];
+  
+    // Adiciona marcadores
+    pontos.forEach(function(ponto) {
+  L.marker(ponto.coords).addTo(map)
+    .bindPopup(`<b>${ponto.nome}</b><br>Ano da coleta: ${ponto.ano}`);
+    });
+  </script>
+  
+  <hr>
+  <section class="galeria-anual">
+    <h2 class="ano">2025</h2>
+    <h2>Coletas de amostras no Instituto de Pesquisas Cananéia</h2>
+    <div class="galeriatitulo">
+      </div>
+      <div class="galeria">
+          <img src="Assets/fotos galeria/foto_galeria_21.png" alt="Imagem 21">
+          <img src="Assets/fotos galeria/foto_galeria_20.png" alt="Imagem 20">
+          <img src="Assets/fotos galeria/foto_galeria_27.jpeg" alt="Imagem 27">
+          <img src="Assets/fotos galeria/foto_galeria_28.jpeg" alt="Imagem 28">
+          <img src="Assets/fotos galeria/foto_galeria_29.jpeg" alt="Imagem 29">
+          <img src="Assets/fotos galeria/foto_galeria_30.jpeg" alt="Imagem 30">
+          <img src="Assets/fotos galeria/foto_galeria_31.jpeg" alt="Imagem 31">
+          <img src="Assets/fotos galeria/foto_galeria_32.jpeg" alt="Imagem 32">
+          <img src="Assets/fotos galeria/foto_galeria_33.jpeg" alt="Imagem 33">
+          <img src="Assets/fotos galeria/foto_galeria_34.jpeg" alt="Imagem 34">
+
+      </div>
+  </section>
+
+  <section class="galeria-anual">
+    <h2 class="ano">2024</h2>
+    <h2>Visita ao Museu Nacional de História Natural</h2>
+    <div class="galeriatitulo">
+      </div>
+      <div class="galeria">
+          <img src="Assets/fotos galeria/foto_galeria_8.jpeg" alt="Imagem 08">
+          <img src="Assets/fotos galeria/foto_galeria_9.jpeg" alt="Imagem 09">
+          <img src="Assets/fotos galeria/foto_galeria_10.jpeg" alt="Imagem 10">
+          <img src="Assets/fotos galeria/foto_galeria_11.jpeg" alt="Imagem 11">
+          <img src="Assets/fotos galeria/foto_galeria_12.jpeg" alt="Imagem 12">
+          <img src="Assets/fotos galeria/foto_galeria_13.jpeg" alt="Imagem 13">
+          <img src="Assets/fotos galeria/foto_galeria_14.jpeg" alt="Imagem 14">
+          <img src="Assets/fotos galeria/foto_galeria_15.jpeg" alt="Imagem 15">
+          <img src="Assets/fotos galeria/foto_galeria_16.jpeg" alt="Imagem 16">
+      </div>
+
+      <h2>Coletas de amostras no municipio de Felixlândia</h2>
+      <div class="galeriatitulo">
+      </div>
+      <div class="galeria">
+          <img src="Assets/fotos galeria/foto_galeria_1.jpeg" alt="Imagem 01">
+          <img src="Assets/fotos galeria/foto_galeria_2.jpeg" alt="Imagem 02">
+          <img src="Assets/fotos galeria/foto_galeria_3.jpeg" alt="Imagem 03">
+          <img src="Assets/fotos galeria/foto_galeria_4.jpeg" alt="Imagem 04">
+          <img src="Assets/fotos galeria/foto_galeria_5.JPG" alt="Imagem 05">
+          <img src="Assets/fotos galeria/foto_galeria_6.JPG" alt="Imagem 06">
+          <img src="Assets/fotos galeria/foto_galeria_7.JPG" alt="Imagem 07">
+      </div>
+  </section>
+  
+
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- Coluna Esquerda -->
+      <div class="footer-left">
+        <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
+        <br>
+        <p><strong>Endereço:</strong><br>
+           Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901<br>
+          Departamento de Parasitologia, 4º andar.
+        </p>
+      </div>  
+  
+      <!-- Coluna Central -->
+      <div class="footer-center">
+        <div class="footer-logos">
+          <a href="https://www.icb.ufmg.br">
+            <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
+          </a>
+          <a href="https://ufmg.br/">
+            <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG">
+          </a>
+          <a href="http://www.fapemig.br/pt/">
+            <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig">
+          </a>
+          <a href="https://www.gov.br/cnpq/pt-br">
+            <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
+          </a>
+        </div>
+      </div>
+  
+      <!-- Coluna Direita -->
+      <div class="footer-right">
+        <form class="search-box" onsubmit="event.preventDefault(); alert('Funcionalidade de busca ainda em desenvolvimento');">
+          <input type="text" placeholder="Buscar">
+          <button type="submit">
+            <img src="Assets/lupa.png" alt="Pesquisar" />
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div style="text-align: center; margin-top: 20px;">
+      Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
+    </div>
+  </footer>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

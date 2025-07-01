@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Malaria UFMG</title>
+
+    <!-- link Estilos CSS -->
+    <link rel="stylesheet" href="Assets/style/styles.css">
+
+    <!-- link favicon -->
+    <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
+
+    <!-- link Slide -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+    <!-- link fonte nav bar -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="assistente-virtual">
+    <img src="Assets/assistente.png" alt="Eriquinha - Assistente Virtual" onclick="toggleChat()" title="Clique para conversar com a Eriquinha">
+    
+    <!-- Janela do chat -->
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <strong>Erika</strong>
+        <span onclick="toggleChat()" style="cursor: pointer;">✖</span>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <p><em>Olá! Sou a Eriquinha, sua assistente virtual. Como posso ajudar?</em></p>
+      </div>
+      <form onsubmit="enviarMensagem(event)">
+        <input type="text" id="chatInput" placeholder="Digite aqui..." />
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botão de tradução que redireciona para a versão em inglês -->
+  <a href="Ingles/indexingles.html" class="translate-button">
+    <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
+  </a>
+
+
+  <!-- Logo do lab como cabeçalho -->
+    <header>
+      <a href="index.html">
+          <img class="imagem" src="Assets/Design sem nome(1)(2).png" alt="Logo do Laboratório" title="Laboratório Malária UFMG">
+      </a>
+    </header>
+
+ <!-- Barra de Navegação -->
+  <nav class="container-navegacao">
+      <a href="index.html">Início</a>
+      
+      <!-- Submenu em "Quem Somos" -->
+      <div class="dropdown">
+        <a href="#">Quem Somos ▾</a>
+        <div class="dropdown-content">
+          <a href="quemsomos.html">Equipe</a>
+          <a href="galeria.html">Galeria</a>
+          <a href="campo.html">Trabalhos de campo</a>
+        </div>
+      </div>
+
+      
+
+      <!-- Submenu em "Linhas de Pesquisa" -->
+      <div class="dropdown">
+        <a href="#">Projetos ▾</a>
+        <div class="dropdown-content">
+          <a href="linhas.html">Linhas de Pesquisa</a>
+          <a href="Projetos.html">Projetos</a>
+          <a href="trabalhe.html">Oportunidades</a>
+        </div>
+      </div>
+
+      <a href="noticias.html">Notícias</a>
+      <a href="publicacao.html">Publicações</a>
+    
+      <!-- Submenu em "Coleção" -->
+      <div class="dropdown">
+        <a href="#">Coleção ▾</a>
+        <div class="dropdown-content">
+          <a href="colecao.html">Coleção</a>
+          <a href="acervoonline.html">Acervo Online</a>
+        </div>
+      </div>
+    
+      <a href="contato.html">Contato</a>
+  </nav>
+
+  <!-- Seção Principal -->
+  <div class="welcome-section">
+    <h2>Bem vindo!</h2>
+  </div>
+  <!-- Slider -->
+  <main>
+      <div class="swiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <div class="project-img">
+                      <img src="Assets/imagem lab.png" alt="Foto 01">
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="project-img">
+                      <img src="Assets/moento campo.png" alt="Foto 02">
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="project-img">
+                      <img src="Assets/foto_03.png" alt="Foto 03">
+                  </div>
+              </div>
+          </div>
+          <!-- Botões de Navegação -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+      </div>
+  </main>
+
+  <!-- Seção de Informações -->
+  
+  <section class="container-quemsomos">
+    <article class="servico">
+      <h2 class="titulo-banners"> Quem Somos? </h2>
+      <p class="servico-texto"> O Grupo Interdisciplinar de Estudos em Malária (GIEM) da Universidade Federal de Minas
+        Gerais (UFMG) é uma iniciativa acadêmica dedicada à pesquisa, ensino e extensão sobre a malária, uma das doenças
+        parasitárias mais impactantes do mundo. O grupo reúne especialistas de diferentes áreas do conhecimento, como
+        biologia, medicina, farmácia, química, bioinformática e saúde pública, promovendo uma abordagem multidisciplinar
+        no estudo do parasito.</p>
+
+        <img class="quem-somos-foto" src="Assets/noite de vinhos.jpeg" alt="Foto membros do laboratório">
+  
+      <a href="quemsomos.html" class="botao-container">Saiba mais</a>
+    </article>
+  
+    <article class="video">
+      <h2>Notícias</h2>
+      <iframe width="800" height="400" src="https://www.youtube.com/embed/rMlnOxDZfdU" frameborder="0" allowfullscreen></iframe>
+    </article>    
+
+    <article class="timeline">
+      <h2>Nossas Publicações</h2>
+        <div class="timeline-item">
+            <div class="year">2025</div>
+            <div class="content">
+                <p><strong>Autor(es):</strong> Erika Martins Braga; Francisco Carlos Ferreira; Irène Landau</p>
+                <p><strong>Título:</strong> From the first descriptions to recent advances: 115 years of reptile Plasmodium research in the Neotropics</p>
+                <p><strong>Revista:</strong> Memórias do Instituto Oswaldo Cruz </p>
+                <a href="https://doi.org/10.1590/0074-02760240217" target="_blank">Acesse a publicação</a>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="year">2025</div>
+            <div class="content">
+                <p><strong>Autor(es):</strong> Lis Marques de Carvalho e Vieira; Sabrina Epiphanio; Natália Coelho Couto de Azevedo Fernandes; Juliana Mariotti Guerra; José Luiz Catão Dias; Maria Andreína Pacheco; Ananias A. Escalante; Érika Martins Braga</p>
+                <p><strong>Título:</strong> Unraveling the host range of Plasmodium huffi: morphological, histopathological and molecular characterization in red-legged seriemas from Brazil</p>
+                <p><strong>Revista:</strong> Parasitology</p>
+                <a href="https://doi.org/10.1017/s003118202500006x" target="_blank">Acesse a publicação</a>
+            </div>
+            
+        </div>
+        <div class="botaopubli-container">
+            <a href="publicacao.html" class="botaopubli">Ver Publicações</a>
+          </div>
+    </article>
+  
+    <article class="redes-sociais">
+      <h2>Nossas Redes Sociais</h2>
+      <div class="imagens-container"> <!-- Agrupando as imagens em um contêiner -->
+          <img src="Assets/logo-twitter.png" alt="Logo X">
+          <img src="Assets/logo-insta.jpg" alt="Logo Instagram">
+          <img src="Assets/logo-linkedin.png" alt="Logo Linkedin">
+          <img src="Assets/logo-youtube1.webp" alt="Logo Youtube">
+      </div>
+    </article>
+  
+  </section>
+  
+   <!-- Rodapé -->
+   <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- Coluna Esquerda -->
+      <div class="footer-left">
+        <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
+        <br>
+        <p><strong>Endereço:</strong><br>
+           Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901<br>
+          Departamento de Parasitologia, 4º andar.
+        </p>
+      </div>  
+  
+      <!-- Coluna Central -->
+      <div class="footer-center">
+        <div class="footer-logos">
+          <a href="https://www.icb.ufmg.br">
+            <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
+          </a>
+          <a href="https://ufmg.br/">
+            <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG">
+          </a>
+          <a href="http://www.fapemig.br/pt/">
+            <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig">
+          </a>
+          <a href="https://www.gov.br/cnpq/pt-br">
+            <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
+          </a>
+        </div>
+      </div>
+  
+      <!-- Coluna Direita -->
+      <div class="footer-right">
+        <form class="search-box" onsubmit="buscar(event)">
+          <input type="text" id="campoBusca" placeholder="Buscar">
+          <button type="submit">
+            <img src="Assets/lupa.png" alt="Pesquisar" />
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div style="text-align: center; margin-top: 20px;">
+      Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
+

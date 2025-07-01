@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Malaria UFMG</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="Assets/style/styles.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
+
+    <!-- Slide -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+    <!-- Script-->
+    <script src="scriptmapa.js"></script>
+
+</head>
+<body>
+
+  
+  <!-- Botão de tradução que redireciona para a versão em inglês -->
+  <a href="Ingles/trabalheingles.html" class="translate-button">
+    <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
+  </a>
+
+
+  <!-- Cabeçalho -->
+    <header>
+      <a href="index.html">
+          <img class="imagem" src="Assets/Logo_nova-removebg-preview.png" alt="Logo do Laboratório" title="Laboratório Malária UFMG">
+      </a>
+    </header>
+
+ <!-- Barra de Navegação -->
+ <nav class="container-navegacao">
+  <a href="index.html">Início</a>
+  
+  <!-- Submenu em "Quem Somos" -->
+  <div class="dropdown">
+    <a href="#">Quem Somos ▾</a>
+    <div class="dropdown-content">
+      <a href="quemsomos.html">Equipe</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="campo.html">Trabalhos de campo</a>
+    </div>
+  </div>
+
+  
+
+  <!-- Submenu em "Linhas de Pesquisa" -->
+  <div class="dropdown">
+    <a href="#">Projetos ▾</a>
+    <div class="dropdown-content">
+      <a href="linhas.html">Linhas de Pesquisa</a>
+      <a href="Projetos.html">Projetos</a>
+      <a href="trabalhe.html">Oportunidades</a>
+    </div>
+  </div>
+
+  <a href="noticias.html">Notícias</a>
+  <a href="publicacao.html">Publicações</a>
+
+  <!-- Submenu em "Coleção" -->
+  <div class="dropdown">
+    <a href="#">Coleção ▾</a>
+    <div class="dropdown-content">
+      <a href="colecao.html">Coleção</a>
+      <a href="acervoonline.html">Acervo Online</a>
+    </div>
+  </div>
+
+  <a href="contato.html">Contato</a>
+</nav>
+
+  <!-- Seção Principal -->
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .pesquisa-container {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    .pesquisa-card {
+      width: 500px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+  
+    .pesquisa-card:hover {
+      transform: scale(1.02);
+    }
+  
+    .pesquisa-imagem {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  
+    .pesquisa-titulo {
+      font-weight: bold;
+      font-size: 20px;
+      padding: 12px;
+      color: #333;
+    }
+
+    .botao-saiba-mais {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 12px auto 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+
+  
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+  
+    .modal-conteudo {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease;
+    }
+  
+    .modal-fechar {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #555;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  
+    .modal-conteudo h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #222;
+    }
+  
+    .modal-conteudo p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.6;
+    }
+  </style>
+  
+  <!-- HTML -->
+
+  <h1>Nossas Linhas de Pesquisa</h1>
+  <section class="pesquisa-container">
+    <div class="pesquisa-card">
+      <img src="Assets/imagem' 112.jpg" class="pesquisa-imagem" alt="Imagem 1">
+      <div class="pesquisa-titulo">Estudo da resposta imune e dos mecanismos associados à proteção e morbidade nas infecções por Plasmodium em populações expostas à malária</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal1')">Saiba mais</button>
+    </div>
+  
+    <div class="pesquisa-card">
+      <img src="Assets/malaria aviaria.png" class="pesquisa-imagem" alt="Imagem 2">
+      <div class="pesquisa-titulo">Hemosporídeos em aves silvestres brasileiras: estudo da diverisidade genética e do efeito da degradação de habitats</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal2')">Saiba mais</button>
+    </div>
+  
+    <div class="pesquisa-card">
+      <img src="Assets/trabalhoaline.jpg" class="pesquisa-imagem" alt="Imagem 3">
+      <div class="pesquisa-titulo">Prospecção de novos alvos para o diagnóstico diferencial entre Plasmodium falciparum e Plasmodium vivax</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal3')">Saiba mais</button>
+    </div>
+  
+    <div class="pesquisa-card">
+      <img src="Assets/imagem luiz.jpg" class="pesquisa-imagem" alt="Imagem 4">
+      <div class="pesquisa-titulo">Taxonomia integrativa para estudo de hemosporídeos (Apicomplexa: Haemosporida) em aves e répteis silvestres brasileiros</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal4')">Saiba mais</button>
+    </div>
+  </section>
+  
+  <!-- Modais -->
+  <!-- Modal 1 -->
+<div id="modal1" class="modal-overlay" onclick="fecharModal(event)">
+  <div class="modal-conteudo">
+    <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
+    
+    <h2>Estudo da resposta imune e dos mecanismos associados à proteção e morbidade nas infecções por Plasmodium em populações expostas à malária </h2>
+    <p style="text-align: justify;">
+      Estudo da resposta imune humoral e celular de populações expostas em áreas endêmicas brasileiras. Determinação dos fatores imunes associados à aquisição de imunidade clínica à malária em pacientes assintomáticos. Avaliação da resposta humoral e celular anti-proteínas recombinantes de Plasmodium vivax e Plasmodium falciparum candidatas à vacina antimalárica.Estudo do padrão de diversidade alélica em populações de Plasmodium e sua associação com a aquisição de imunidade naturalmente adquirida à malária na Amazônia.Determinação de biomarcadores de morbidade na Malária vivax e estudo dos principais mecanismos associados à determinação de anemia.
+    </p>
+    <img src="Assets/imagem' 112.jpg" alt="Imagem Modal 1" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="modal2" class="modal-overlay" onclick="fecharModal(event)">
+  <div class="modal-conteudo">
+    <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
+    
+    <h2>Hemosporídeos em aves silvestres brasileiras: estudo da diverisidade genética e do efeito da degradação de habitats</h2>
+    <p style="text-align: justify;">
+      Estudo da prevalência de parasitismo por hemosporídeos (Apicomplexa: Haemosporida) em aves silvestres de grandes e pequenos fragmentos e em áreas urbanizadas. Uso de marcadores moleculares para caracterização de isolados de Plasmodium sp., Haemoproteus sp. e Leucocytozoon sp. em áreas sujeitas ao processo de fragmentação e urbanização. Estudos filogenéticos e de distribuição de linhagens de Plasmodium, Haemoproteus e Leucocytozoon no Brasil e no mundo.
+    </p>
+    <img src="Assets/malaria aviaria.png" alt="Imagem Modal 2" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div id="modal3" class="modal-overlay" onclick="fecharModal(event)">
+  <div class="modal-conteudo">
+    <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
+    
+    <h2>Prospecção de novos alvos para o diagnóstico diferencial entre Plasmodium falciparum e Plasmodium vivax</h2>
+    <p style="text-align: justify;">
+      Propõe-se a identificação de novos alvos para o diagnóstico molecular e sorológico de malária por meio de uma abordagem genômica racional e de alta resolução visando identificar sequências espécie-específicas com alto número de cópias, na tentativa de melhorar a sensibilidade e acurácia do método de diagnóstico.
+    </p>
+    <img src="Assets/trabalhoaline.jpg" alt="Imagem Modal 3" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div id="modal4" class="modal-overlay" onclick="fecharModal(event)">
+  <div class="modal-conteudo">
+    <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
+    
+    <h2>Taxonomia integrativa de hemosporídeos</h2>
+    <p style="text-align: justify;">
+      Estimular jovens pesquisadores e estudantes de graduação e PG a atuarem em pesquisa envolvendo a taxonomia de hemo parasitos de animais silvestres. Descrição e redescrição de espécies de hemosporídeos infectando aves e répteis brasileiros a partir da análise morfológica e sequenciamento de genes específicos. Revisão taxonômica e análise filogenética de hemosporídeos em hospedeiros silvestres.
+    </p>
+    <img src="Assets/imagem luiz.jpg" alt="Imagem Modal 4" style="width:100%; border-radius: 8px; margin-bottom: 15px;">
+  </div>
+</div>
+  
+  <!-- JavaScript -->
+  <script>
+    function abrirModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+  
+    function fecharModal(event) {
+      if (
+        event.target.classList.contains('modal-overlay') ||
+        event.target.classList.contains('modal-fechar')
+      ) {
+        document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');
+      }
+    }
+  </script>
+
+<!-- Rodapé -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Coluna Esquerda -->
+    <div class="footer-left">
+      <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
+      <br>
+      <p><strong>Endereço:</strong><br>
+         Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901<br>
+        Departamento de Parasitologia, 4º andar.
+      </p>
+    </div>  
+
+    <!-- Coluna Central -->
+    <div class="footer-center">
+      <div class="footer-logos">
+        <a href="https://www.icb.ufmg.br">
+          <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
+        </a>
+        <a href="https://ufmg.br/">
+          <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG">
+        </a>
+        <a href="http://www.fapemig.br/pt/">
+          <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig">
+        </a>
+        <a href="https://www.gov.br/cnpq/pt-br">
+          <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna Direita -->
+    <div class="footer-right">
+      <form class="search-box" onsubmit="buscar(event)">
+        <input type="text" id="campoBusca" placeholder="Buscar">
+        <button type="submit">
+          <img src="Assets/lupa.png" alt="Pesquisar" />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

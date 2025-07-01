@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Malaria UFMG</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="Assets/style/styles.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
+
+    <!-- Slide -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+    <!-- Script-->
+    <script src="scriptmapa.js"></script>
+
+</head>
+<body>
+
+  
+  <!-- Botão de tradução que redireciona para a versão em inglês -->
+  <a href="Ingles/trabalheingles.html" class="translate-button">
+    <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
+  </a>
+
+
+  <!-- Cabeçalho -->
+    <header>
+      <a href="index.html">
+          <img class="imagem" src="Assets/Logo_nova-removebg-preview.png" alt="Logo do Laboratório" title="Laboratório Malária UFMG">
+      </a>
+    </header>
+
+ <!-- Barra de Navegação -->
+ <nav class="container-navegacao">
+  <a href="index.html">Início</a>
+  
+  <!-- Submenu em "Quem Somos" -->
+  <div class="dropdown">
+    <a href="#">Quem Somos ▾</a>
+    <div class="dropdown-content">
+      <a href="quemsomos.html">Equipe</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="campo.html">Trabalhos de campo</a>
+    </div>
+  </div>
+
+  
+
+  <!-- Submenu em "Linhas de Pesquisa" -->
+  <div class="dropdown">
+    <a href="#">Projetos ▾</a>
+    <div class="dropdown-content">
+      <a href="linhas.html">Linhas de Pesquisa</a>
+      <a href="Projetos.html">Projetos</a>
+      <a href="trabalhe.html">Oportunidades</a>
+    </div>
+  </div>
+
+  <a href="noticias.html">Notícias</a>
+  <a href="publicacao.html">Publicações</a>
+
+  <!-- Submenu em "Coleção" -->
+  <div class="dropdown">
+    <a href="#">Coleção ▾</a>
+    <div class="dropdown-content">
+      <a href="colecao.html">Coleção</a>
+      <a href="acervoonline.html">Acervo Online</a>
+    </div>
+  </div>
+
+  <a href="contato.html">Contato</a>
+</nav>
+
+  <!-- Seção Principal -->
+
+  <section class="oportunidade-container">
+    <h1>Oportunidades</h1>
+    <div class="imagemtrabalho">
+    <img src="Assets/trabalho.png" alt="Imagem oportunidade de bolsa">
+    </div>
+    <div class="oportunidade-box">
+     <!-- <img src="ab2aa0c6-ca97-4d83-b2f1-3022cc9568d8.png" alt="Vaga Técnico Moa Lab" class="imagem-oportunidade"/>-->
+
+      <div class="descricao-oportunidade">
+        <p><strong>Temos uma oportunidade junto ao grupo para Bolsista de apoio Técnico de nível superior com experiência em diagnóstico molecular e organização de coleções taxonomicas:</strong></p>
+        <p>
+          O GEIM (Grupo de Estudos Interdisciplinares em Malária) do Instituto de Ciências Biologicas da UFMG, em Minas Gerais, procura um técnico para trabalhar no projeto de pesquisa “Taxonomia integrativa para estudo de hemosporídeos (Apicomplexa: Haemosporida) em aves e répteis silvestres brasileiros”.
+        </p>
+        <p>
+          Os interessados devem ter nível superior na área de ciencias biologias (ou áreas afins) e experiência prática em biologia molecular e organização de coleções taxonomicas. Espera-se fluência em inglês. O valor da bolsa é de R$ 770,00 mensais, com contrato inicial por 12 meses e possibilidade de renovação. O início das atividades é imediato.
+        </p>
+        <p>
+          Envie CV Lattes, carta de apresentação (duas páginas) e dados de contato (nome e e-mail) de duas referências (por exemplo, ex-professores) com a maior brevidade possível para erikabragaufmg@gmail.com .
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- Rodapé -->
+<footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Coluna Esquerda -->
+    <div class="footer-left">
+      <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
+      <br>
+      <p><strong>Endereço:</strong><br>
+         Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901<br>
+        Departamento de Parasitologia, 4º andar.
+      </p>
+    </div>  
+
+    <!-- Coluna Central -->
+    <div class="footer-center">
+      <div class="footer-logos">
+        <a href="https://www.icb.ufmg.br">
+          <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
+        </a>
+        <a href="https://ufmg.br/">
+          <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG">
+        </a>
+        <a href="http://www.fapemig.br/pt/">
+          <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig">
+        </a>
+        <a href="https://www.gov.br/cnpq/pt-br">
+          <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna Direita -->
+    <div class="footer-right">
+      <form class="search-box" onsubmit="buscar(event)">
+        <input type="text" id="campoBusca" placeholder="Buscar">
+        <button type="submit">
+          <img src="Assets/lupa.png" alt="Pesquisar" />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

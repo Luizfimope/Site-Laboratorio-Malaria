@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Malaria UFMG</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="Assets/style/styles.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
+
+</head>
+
+<body>
+  <!-- Botão de tradução que redireciona para a versão em inglês -->
+  <a href="Ingles/contatoingles.html" class="translate-button">
+    <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
+  </a> 
+
+  <!-- Cabeçalho -->
+  <header>
+    <a href="index.html">
+        <img class="imagem" src="Assets/Logo_nova-removebg-preview.png" alt="Logo do Laboratório" title="Laboratório Malária UFMG">
+    </a>
+  </header>
+
+  <!-- Barra de Navegação -->
+  <nav class="container-navegacao">
+    <a href="index.html">Início</a>
+    
+    <!-- Submenu em "Quem Somos" -->
+    <div class="dropdown">
+      <a href="#">Quem Somos ▾</a>
+      <div class="dropdown-content">
+        <a href="quemsomos.html">Equipe</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="campo.html">Trabalhos de campo</a>
+      </div>
+    </div>
+
+    
+
+    <!-- Submenu em "Linhas de Pesquisa" -->
+    <div class="dropdown">
+      <a href="#">Projetos ▾</a>
+      <div class="dropdown-content">
+        <a href="linhas.html">Linhas de Pesquisa</a>
+        <a href="Projetos.html">Projetos</a>
+        <a href="trabalhe.html">Oportunidades</a>
+      </div>
+    </div>
+
+    <a href="noticias.html">Notícias</a>
+    <a href="publicacao.html">Publicações</a>
+  
+    <!-- Submenu em "Coleção" -->
+    <div class="dropdown">
+      <a href="#">Coleção ▾</a>
+      <div class="dropdown-content">
+        <a href="colecao.html">Coleção</a>
+        <a href="acervoonline.html">Acervo Online</a>
+      </div>
+    </div>
+  
+    <a href="contato.html">Contato</a>
+</nav>
+
+  <h1>Contato - Grupo Interdisciplinar de Estudos em Malária - UFMG</h1>
+
+  <div class="container">
+      <!-- Formulário de Contato -->
+      <div class="form-container">
+          <h2>Formulário de Contato</h2>
+          <form action="#" method="post">
+              <label for="name">Nome</label>
+              <input type="text" id="name" name="name" required placeholder="Seu nome">
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Seu email">
+
+              <label for="message">Motivo do Contato</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Descreva o motivo do contato"></textarea>
+
+              <button type="submit">Enviar</button>
+          </form>
+      </div>
+
+      <!-- Mapa do Google -->
+      <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.554927984762!2d-43.9666384!3d-19.868227500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa690f4130d8481%3A0xec4790cfb0ad5731!2sICB%20-%20Instituto%20de%20Ci%C3%AAncias%20Biol%C3%B3gicas!5e1!3m2!1spt-BR!2sbr!4v1747010270399!5m2!1spt-BR!2sbr" 
+              width="600" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+          </div>
+      </div>
+  </div>
+
+  <!-- Endereço do ICB -->
+  <div class="address-container">
+      <p>Endereço: Instituto de Ciências Biológicas (ICB) - UFMG</p>
+      <p>Av. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901</p>
+  </div>
+
+  <!-- Carregando a API com a chave de API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap&async=1&defer=1"></script>
+  <script src="scriptmapa.js"></script>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Coluna Esquerda -->
+      <div class="footer-left">
+        <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
+        <br>
+        <p><strong>Endereço:</strong><br>
+           Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901<br>
+          Departamento de Parasitologia, 4º andar.
+        </p>
+        </div>  
+      <!-- Coluna Central -->
+      <div class="footer-center">
+        <div class="footer-logos">
+            <a href="https://www.icb.ufmg.br">
+                <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG" title="Laboratório Malária UFMG">
+            </a>
+            <a href="https://ufmg.br/">
+                <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG" title="Laboratório Malária UFMG">
+            </a>
+            <a href="http://www.fapemig.br/pt/">
+              <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig" title="Laboratório Malária UFMG">
+          </a>
+            <a href="https://www.gov.br/cnpq/pt-br">
+              <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ" title="Laboratório Malária UFMG">
+          </a>
+        </div>
+    </div>
+  
+      <!-- Coluna Direita -->
+      <div class="footer-right">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar">
+          <button>
+            <img src="Assets/lupa.png" alt="Pesquisar" />
+          </button>
+        </div>
+      </div>
+    </div>
+    Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
