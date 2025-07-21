@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio Malaria UFMG</title>
-
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="Assets/style/styles.css">
-
-    <!-- favicon -->
-    <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
-
-    <!-- Slide -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notícias - Laboratório Malária UFMG</title>
+  <link rel="stylesheet" href="Assets/style/styles.css" />
+  <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <!-- Botão de tradução que redireciona para a versão em inglês -->
-  <a href="Ingles/noticiasingles.html" class="translate-button">
+  <a href="Ingles/indexingles.html" class="translate-button">
     <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
-  </a> 
+  </a>
 
-
-  <!-- Cabeçalho -->
+<!-- TOPO do site com imagem de fundo -->
+<div class="topo">
+  <!-- Logo do lab como cabeçalho -->
   <header>
     <a href="index.html">
-        <img class="imagem" src="Assets/Logo_nova-removebg-preview.png" alt="Logo do Laboratório" title="Laboratório Malária UFMG">
+      <img class="imagem" src="Assets/Design sem nome(1)(2).png" alt="Logo do Laboratório"
+        title="Laboratório Malária UFMG">
     </a>
   </header>
 
   <!-- Barra de Navegação -->
   <nav class="container-navegacao">
     <a href="index.html">Início</a>
-    
+
     <!-- Submenu em "Quem Somos" -->
     <div class="dropdown">
-      <a href="#">Quem Somos ▾</a>
+      <a href="#">Quem Somos</a>
       <div class="dropdown-content">
         <a href="quemsomos.html">Equipe</a>
         <a href="galeria.html">Galeria</a>
@@ -44,11 +38,11 @@
       </div>
     </div>
 
-    
+
 
     <!-- Submenu em "Linhas de Pesquisa" -->
     <div class="dropdown">
-      <a href="#">Projetos ▾</a>
+      <a href="#">Projetos</a>
       <div class="dropdown-content">
         <a href="linhas.html">Linhas de Pesquisa</a>
         <a href="Projetos.html">Projetos</a>
@@ -58,91 +52,107 @@
 
     <a href="noticias.html">Notícias</a>
     <a href="publicacao.html">Publicações</a>
-  
+
     <!-- Submenu em "Coleção" -->
     <div class="dropdown">
-      <a href="#">Coleção ▾</a>
+      <a href="#">Coleção</a>
       <div class="dropdown-content">
         <a href="colecao.html">Coleção</a>
         <a href="acervoonline.html">Acervo Online</a>
       </div>
     </div>
-  
+
     <a href="contato.html">Contato</a>
-</nav>
+  </nav>
+</div>
 
-  <!-- Seção de Informações -->
+  <!-- Conteúdo principal -->
+  <main class="noticias-container">
+    <h2 class="titulo-banners" style="text-align:center; margin-top: 30px;">Notícias Recentes</h2>
   
-  <article class="video">
-    <h2>Notícias</h2>
-    <iframe width="800" height="400" src="https://www.youtube.com/embed/rMlnOxDZfdU" frameborder="0" allowfullscreen></iframe>
-  </article> 
-
-  <section class="imagem-com-texto">
-    <div class="conteudo">
-        <img src="Assets/Imagem noticia lis.png" alt="Imagem de exemplo" class="imagem-lado">
-        <div class="texto-lado">
-            <h2 class="titulo-lateral">Defesa de Mestrado</h2>
-            <hr>
-            <p><strong>Defesa de dissertação:</strong> Lis Marques de Carvalho e Vieira Santos (Parasitologia).</p>
-            <p><strong>Titulo:</strong>Detecção, caracterização e taxonomia de hemosporídeos em Cariama cristata: destaque para a primeira descrição
-                morfológica de uma espécie nova de Leucocytozoon no Brasil</p>
-            
-            <p><strong>Apresentação:</strong> Lis Marques de Carvalho e Vieira Santos</p>
-            <p><strong>Orientadora:</strong> Dra. Érika Martins Braga</p>
-            <p><strong>Coorientador:</strong> Dr. Francisco Carlos Ferreira Júnior</p>
-            <a
-                href="https://www.icb.ufmg.br/novas/acontecenoicb/1802-defesa-de-dissertacao-lis-marques-de-carvalho-e-vieira-santos-parasitologia">Saiba
-                Mais
-            </a>
+    <div class="noticias-grid">
+      <div class="noticia-card">
+        <img src="Assets/imagem lab.png" alt="Imagem da notícia">
+        <div class="noticia-conteudo">
+          <h3>Nova Publicação sobre <em>Plasmodium</em> em Répteis</h3>
+          <p class="data-noticia">21 de Julho de 2025</p>
+          <p>Pesquisadores do GEIM publicaram artigo pioneiro detalhando a diversidade de <em>Plasmodium</em> em répteis do Brasil. O estudo foi destaque na revista <em>Parasitology</em>.</p>
+          <a href="https://doi.org/10.1017/s003118202500006x" class="botao-container" target="_blank">Ler mais</a>
         </div>
-    </div>
-</section>
-
+      </div>
   
-  <!-- Rodapé -->
-  <footer class="footer">
-    <div class="footer-container">
-      <!-- Coluna Esquerda -->
-      <div class="footer-left">
-        <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
-        <br>
-        <p><strong>Endereço:</strong><br>
-           Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901<br>
-          Departamento de Parasitologia, 4º andar.
-        </p>
-        </div>  
-      <!-- Coluna Central -->
-      <div class="footer-center">
-        <div class="footer-logos">
-            <a href="https://www.icb.ufmg.br">
-                <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG" title="Laboratório Malária UFMG">
-            </a>
-            <a href="https://ufmg.br/">
-                <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG" title="Laboratório Malária UFMG">
-            </a>
-            <a href="https://www.gov.br/cnpq/pt-br">
-              <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ" title="Laboratório Malária UFMG">
-          </a>
-        </div>
-    </div>
-  
-      <!-- Coluna Direita -->
-      <div class="footer-right">
-        <div class="search-box">
-          <input type="text" placeholder="Buscar">
-          <button>
-            <img src="Assets/lupa.png" alt="Pesquisar" />
-          </button>
+      <div class="noticia-card">
+        <img src="Assets/imagem lab.png" alt="Imagem da notícia">
+        <div class="noticia-conteudo">
+          <h3>GEIM participa de evento internacional em Paris</h3>
+          <p class="data-noticia">10 de Junho de 2025</p>
+          <p>Integrantes do GEIM apresentaram seus resultados no Congresso Internacional de Parasitologia, fortalecendo parcerias internacionais e ampliando a visibilidade do grupo.</p>
+          <a href="#" class="botao-container">Ler mais</a>
         </div>
       </div>
     </div>
-    Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
-  </footer>
+  </main>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+<!-- Rodapé -->
+<footer class="footer">
+  <div class="footer-container">
 
+    <!-- Coluna Esquerda -->
+    <div class="footer-left">
+      <h3>
+        Grupo de Estudos Interdisciplinares em Malária (GEIM)
+      </h3>
+      <br>
+      <p><strong>
+        Endereço:
+      </strong><br>
+      Campus UFMG: Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901
+      ICB, Bloco E4, Sala 167 - Laboratório de Malária e Genômica de Parasitos (LMGP)
+      
+      </p>
+    </div>
+
+    <!-- Coluna Central -->
+    <div class="footer-logos">
+      <a href="https://www.icb.ufmg.br">
+        <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
+      </a>
+      <a href="https://ufmg.br/">
+        <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG">
+      </a>
+      <a href="http://www.fapemig.br/pt/">
+        <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig">
+      </a>
+      <a href="https://www.gov.br/cnpq/pt-br">
+        <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
+      </a>
+    
+      <!-- Elemento vazio para forçar quebra de linha -->
+      <div class="logo-spacer"></div>
+    
+      <!-- Última imagem centralizada -->
+      <a href="" class="last-logo-wrapper">
+        <img class="footer-logo" src="Assets/LMGP.jpeg" alt="Logo CNPQ">
+      </a>
+    </div>
+
+    <!-- Coluna Direita -->
+    <div class="footer-right">
+      <form class="search-box" onsubmit="buscar(event)">
+        <input type="text" id="campoBusca" placeholder="Buscar">
+        <button type="submit">
+          <img src="Assets/lupa.png" alt="Pesquisar" />
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px;">
+    Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg;Todos os direitos reservados
+  </div>
+</footer>
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
