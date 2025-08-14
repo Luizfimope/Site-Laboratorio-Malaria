@@ -89,7 +89,7 @@ body, html {
     justify-content: center;
     background-color: rgb(199, 199, 199);
     padding: 10px 0;
-    max-width: 1250px;
+    max-width: 1400px;
     height: auto;
     margin: auto; /* Não precisa mais descer! */
     margin-bottom: 0px;
@@ -952,22 +952,30 @@ h2 {
 
   .footer-logos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 20px; /* linha x coluna */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px 40px; /* Espaçamento entre linhas e colunas */
     justify-items: center;
     align-items: center;
+    margin: 40px 0;
   }
   
+  /* As duas últimas logos vão ocupar o centro da linha abaixo */
+  .footer-logo:nth-last-child(2) {
+    grid-column: 2 / 3; /* Coluna central da segunda linha */
+  }
   
-
-.footer-logo {
-  width: 90px; /* pode usar 100px se quiser, desde que caibam 2 */
-  height: auto;
-  background-color: #e8f5e9;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  transition: transform 0.2s ease;
-}
+  .footer-logo:last-child {
+    grid-column: 3 / 4; /* Coluna da direita na segunda linha (pode ajustar se quiser centralizar as duas de forma mais justa) */
+  }
+  
+  .footer-logo {
+    width: 90px;
+    height: auto;
+    background-color: #e8f5e9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+  }
 
 
 .footer-logo:hover {
@@ -1017,7 +1025,6 @@ h2 {
   
   .imagem-oportunidade {
     width: 100%;
-    max-height: 400px;
     object-fit: cover;
     border-radius: 8px;
   }
@@ -1611,3 +1618,13 @@ h2 {
 .noticia-conteudo .botao-container:hover {
   background-color: #005f56;
 }
+
+
+
+
+
+
+
+
+
+
