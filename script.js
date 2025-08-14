@@ -67,3 +67,66 @@ function filtrarConteudo(event) {
   }
   
 
+
+  // ====== MENU HAMBÚRGUER ======
+(function () {
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('navMenu');
+
+  if (!btn || !nav) return;
+
+  // abre/fecha o nav
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // fecha o menu ao clicar fora (mobile)
+  document.addEventListener('click', (e) => {
+    const clickInside = nav.contains(e.target) || btn.contains(e.target);
+    if (!clickInside && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ====== DROPDOWN POR TOQUE NO MOBILE ======
+  // Em telas menores, o hover não funciona; vamos abrir/fechar por clique
+  const MQ = window.matchMedia('(max-width: 992px)');
+  const dropdowns = Array.from(nav.querySelectorAll('.dropdown'));
+
+  function bindDropdownClicks() {
+    dropdowns.forEach(drop => {
+      const trigger = drop.querySelector(':scope > a');
+
+      // evita duplicar listeners ao alternar breakpoints
+      drop._listener && trigger.removeEventListener('click', drop._listener);
+
+      if (MQ.matches && trigger) {
+        const handler = (ev) => {
+          // se o link é âncora (#) ou vazio, previne navegação
+          if (!trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
+            ev.preventDefault();
+          } else {
+            // se tem link real, só abre/fecha e NÃO navega no primeiro toque
+            ev.preventDefault();
+          }
+          // alterna este dropdown e fecha os outros
+          const isOpen = drop.classList.toggle('open');
+          dropdowns.forEach(d => { if (d !== drop) d.classList.remove('open'); });
+          // acessibilidade
+          trigger.setAttribute('aria-expanded', String(isOpen));
+        };
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', handler);
+        drop._listener = handler;
+      }
+    });
+  }
+
+  bindDropdownClicks();
+  MQ.addEventListener('change', bindDropdownClicks);
+})();
+
+

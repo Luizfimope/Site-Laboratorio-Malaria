@@ -30,7 +30,7 @@
     <div class="chat-box" id="chatBox">
       <div class="chat-header">
         <strong>
-          Erika
+          Laveran
         </strong>
         <span onclick="toggleChat()" style="cursor: pointer;">✖</span>
       </div>
@@ -64,7 +64,7 @@
   </header>
 
   <!-- Barra de Navegação -->
-  <nav class="container-navegacao">
+  <nav class="container-navegacao" id="navMenu">
     <a href="index.html">Início</a>
 
     <!-- Submenu em "Quem Somos" -->
@@ -85,10 +85,10 @@
       <div class="dropdown-content">
         <a href="linhas.html">Linhas de Pesquisa</a>
         <a href="Projetos.html">Projetos</a>
-        <a href="trabalhe.html">Oportunidades</a>
+        
       </div>
     </div>
-
+    <a href="trabalhe.html">Oportunidades</a>
     <a href="noticias.html">Notícias</a>
     <a href="publicacao.html">Publicações</a>
 
@@ -149,13 +149,6 @@
       <h2 class="titulo-banners"> 
         Quem Somos?
       </h2>
-      <p class="servico-texto"> 
-        O Grupo Interdisciplinar de Estudos em Malária (GIEM) da Universidade Federal de Minas
-        Gerais (UFMG) é uma iniciativa acadêmica dedicada à pesquisa, ensino e extensão sobre a malária, uma das doenças
-        parasitárias mais impactantes do mundo. O grupo reúne especialistas de diferentes áreas do conhecimento, como
-        biologia, medicina, farmácia, química, bioinformática e saúde pública, promovendo uma abordagem multidisciplinar
-        no estudo do parasito.
-      </p>
       <img class="quem-somos-foto" src="Assets/noite de vinhos.jpeg" alt="Foto membros do laboratório">
 
       <a href="quemsomos.html" class="botao-container">
@@ -170,7 +163,7 @@
       <iframe width="800" height="400" src="https://www.youtube.com/embed/rMlnOxDZfdU" frameborder="0"
         allowfullscreen></iframe>
     </article>
-
+<!--
     <article class="timeline">
       <h2>
         Nossas Publicações
@@ -202,7 +195,7 @@
         <a href="publicacao.html" class="botaopubli">Ver Publicações</a>
       </div>
     </article>
-
+  -->
     <article class="redes-sociais">
       <h2>Nossas Redes Sociais</h2>
       <div class="imagens-container"> <!-- Agrupando as imagens em um contêiner -->
@@ -248,14 +241,10 @@
         <a href="https://www.gov.br/cnpq/pt-br">
           <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
         </a>
-      
-        <!-- Elemento vazio para forçar quebra de linha -->
-        <div class="logo-spacer"></div>
-      
-        <!-- Última imagem centralizada -->
-        <a href="" class="last-logo-wrapper">
+        <a href="" >
           <img class="footer-logo" src="Assets/LMGP.jpeg" alt="Logo CNPQ">
         </a>
+
       </div>
 
       <!-- Coluna Direita -->

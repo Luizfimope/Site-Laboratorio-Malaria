@@ -56,10 +56,10 @@
       <div class="dropdown-content">
         <a href="linhas.html">Linhas de Pesquisa</a>
         <a href="Projetos.html">Projetos</a>
-        <a href="trabalhe.html">Oportunidades</a>
+        
       </div>
     </div>
-
+    <a href="trabalhe.html">Oportunidades</a>
     <a href="noticias.html">Notícias</a>
     <a href="publicacao.html">Publicações</a>
 
@@ -119,17 +119,22 @@
   <!-- Rodapé -->
   <footer class="footer">
     <div class="footer-container">
-      
+
       <!-- Coluna Esquerda -->
       <div class="footer-left">
-        <h3>Grupo de Estudos Interdisciplinares em Malária (GEIM)</h3>
+        <h3>
+          Grupo de Estudos Interdisciplinares em Malária (GEIM)
+        </h3>
         <br>
-        <p><strong>Endereço:</strong><br>
-          Campus UFMG: Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901
+        <p><strong>
+          Endereço:
+        </strong><br>
+        Campus UFMG: Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901
         ICB, Bloco E4, Sala 167 - Laboratório de Malária e Genômica de Parasitos (LMGP)
+        
         </p>
-      </div>  
-  
+      </div>
+
       <!-- Coluna Central -->
       <div class="footer-logos">
         <a href="https://www.icb.ufmg.br">
@@ -144,29 +149,25 @@
         <a href="https://www.gov.br/cnpq/pt-br">
           <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
         </a>
-      
-        <!-- Elemento vazio para forçar quebra de linha -->
-        <div class="logo-spacer"></div>
-      
-        <!-- Última imagem centralizada -->
-        <a href="" class="last-logo-wrapper">
+        <a href="" >
           <img class="footer-logo" src="Assets/LMGP.jpeg" alt="Logo CNPQ">
         </a>
+
       </div>
-  
+
       <!-- Coluna Direita -->
       <div class="footer-right">
-        <form class="search-box" onsubmit="event.preventDefault(); alert('Funcionalidade de busca ainda em desenvolvimento');">
-          <input type="text" placeholder="Buscar">
+        <form class="search-box" onsubmit="buscar(event)">
+          <input type="text" id="campoBusca" placeholder="Buscar">
           <button type="submit">
             <img src="Assets/lupa.png" alt="Pesquisar" />
           </button>
         </form>
       </div>
     </div>
-  
+
     <div style="text-align: center; margin-top: 20px;">
-      Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; Todos os direitos reservados
+      Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg;Todos os direitos reservados
     </div>
   </footer>
 
