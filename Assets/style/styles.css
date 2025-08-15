@@ -345,7 +345,7 @@ body, html {
 
         .quem-somos-foto {
             width: 100%;              /* ou ajuste para '300px', '50%', etc. */
-            max-width: 500px;        /* impede que fique muito grande em telas largas */
+            max-width: 800px;        /* impede que fique muito grande em telas largas */
             border-radius: 15px;     /* bordas curvas suaves; pode aumentar, ex.: 30px */
             display: block;          /* para aplicar margin automática */
             margin: 20px auto;       /* centraliza e dá espaçamento */
