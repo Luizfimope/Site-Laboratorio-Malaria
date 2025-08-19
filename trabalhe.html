@@ -83,37 +83,11 @@
 
   <section class="oportunidade-container">
     <h1>Oportunidades</h1>
-    <hr>
-    <div class="oportunidade-box">
-     <!-- <img src="ab2aa0c6-ca97-4d83-b2f1-3022cc9568d8.png" alt="Vaga Técnico Moa Lab" class="imagem-oportunidade"/>-->
-
-      <div class="descricao-oportunidade">
-        <p style="text-align: center;"><strong>Oportunidade de Bolsa de Apoio Técnico no GEIM-UFMG</strong></p>
-        <p>
-          O Grupo Interdisciplinar de Estudos em Malária (GIEM-UFMG) busca um(a) Bolsista de Apoio Técnico para integrar a equipe no projeto de pesquisa "Abordagem integrativa para estudos taxonômicos de hemosporídeos (Apicomplexa: Haemosporida) em aves e répteis silvestres brasileiros".
-        </p>
-        <p ><strong>Requisitos:</strong></p>
-        <ul style="text-align: left; max-width: 600px; margin: 0 auto;";>
-          <li>Nível superior completo em Ciências Biológicas ou áreas afins;</li>
-          <li>Experiência prática com <strong> EXCEL</strong>;</li>
-          <li>Ter interesse em estudos envolvendo parasitos de animais silvestres;</li>
-          <li>Desejável experiência em organização de coleções taxonômicas.</li>
-        </ul>
-        <br>
-        <p ><strong>Condições:</strong></p>
-        <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
-          <li><strong> Duração inicial da bolsa</strong> - 12 meses, com possibilidade de renovação;</li>
-          <li>Início imediato das atividades;</li>
-          <li>O valor da bolsa é de R$ 770,00 mensais.</li>
-        </ul>
-        <br>
-        <p ><strong>Como se candidatar:</strong></p>
-        <p>
-          Interessado(a)s devem enviar CV Lattes, carta de apresentação (máximo de duas páginas) e informações para contato (nome e e-mail) de duas referências (por exemplo, ex-professores) para o e-mail: <strong>erikabragaufmg@gmail.com</strong>.
-        </p>
-        
-
-        
+    <div id="popup" class="popup-overlay">
+      <div class="popup-box">
+        <h2>🚧 Sem oportunidades</h2>
+        <p>No momento não estamos com oportunidades abertas. Volte em breve!</p>
+        <button onclick="fecharPopup()">OK</button>
       </div>
     </div>
   </section>
@@ -180,6 +154,18 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
+
+
+  <script>
+    function fecharPopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  
+    // Opcional: exibe o pop-up automaticamente ao carregar a página
+    window.onload = function() {
+      document.getElementById("popup").style.display = "flex";
+    };
+  </script>
 
 </body>
 </html>
