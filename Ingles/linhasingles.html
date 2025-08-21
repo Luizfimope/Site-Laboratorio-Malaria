@@ -7,10 +7,10 @@
   <title>Laboratorio Malaria UFMG</title>
 
   <!-- Estilos CSS -->
-  <link rel="stylesheet" href="Assets/style/styles.css">
+  <link rel="stylesheet" href="../Assets/style/styles.css">
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="Assets/Sem Título-1.png" type="image/png">
+  <link rel="shortcut icon" href="../Assets/Sem Título-1.png" type="image/png">
 
   <!-- Slide -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -24,8 +24,8 @@
 
 
   <!-- Botão de tradução que redireciona para a versão em inglês -->
-  <a href="Ingles/trabalheingles.html" class="translate-button">
-    <img src="Assets/Bandeira EUA - Tradução.png" alt="Traduzir para inglês" title="Traduzir para inglês">
+  <a href="../linhas.html" class="translate-button">
+    <img src="../Assets/bandeira brasil.avif" alt="Traduzir para inglês" title="Traduzir para inglês">
   </a>
 
 
@@ -34,22 +34,22 @@
     <!-- Logo do lab como cabeçalho -->
     <header>
       <a href="index.html">
-        <img class="imagem" src="Assets/Design sem nome(1)(2).png" alt="Logo do Laboratório"
+        <img class="imagem" src="../Assets/Design sem nome(1)(2).png" alt="Logo do Laboratório"
           title="Laboratório Malária UFMG">
       </a>
     </header>
 
-    <!-- Barra de Navegação -->
-  <nav class="container-navegacao">
-    <a href="index.html">Início</a>
+   <!-- Barra de Navegação -->
+  <nav class="container-navegacao" id="navMenu">
+    <a href="indexingles.html">Home</a>
 
     <!-- Submenu em "Quem Somos" -->
     <div class="dropdown">
-      <a href="#">Quem Somos</a>
+      <a href="#">About us</a>
       <div class="dropdown-content">
-        <a href="quemsomos.html">Equipe</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="campo.html">Trabalhos de campo</a>
+        <a href="quemsomosingles.html">Team</a>
+        <a href="galeriaingles.html">Gallery</a>
+        <a href="campoingles.html">Fieldwork</a>
       </div>
     </div>
 
@@ -57,27 +57,27 @@
 
     <!-- Submenu em "Linhas de Pesquisa" -->
     <div class="dropdown">
-      <a href="#">Projetos</a>
+      <a href="#">Projects</a>
       <div class="dropdown-content">
-        <a href="linhas.html">Linhas de Pesquisa</a>
-        <a href="Projetos.html">Projetos</a>
+        <a href="linhasingles.html">Research Lines</a>
+        <a href="Projetosingles.html">Projects</a>
         
       </div>
     </div>
-    <a href="trabalhe.html">Oportunidades</a>
-    <a href="noticias.html">Destaques</a>
-    <a href="publicacao.html">Publicações</a>
+    <a href="trabalheingles.html">Opportunities</a>
+    <a href="noticiasingles.html">News</a>
+    <a href="publicacaoingles.html">Publications</a>
 
     <!-- Submenu em "Coleção" -->
     <div class="dropdown">
-      <a href="#">Coleção</a>
+      <a href="#">Collection</a>
       <div class="dropdown-content">
-        <a href="colecao.html">Coleção</a>
-        <a href="acervoonline.html">Acervo Online</a>
+        <a href="colecaoingles.html">Collection</a>
+        <a href="acervoonlineingles.html">Online Collection</a>
       </div>
     </div>
 
-    <a href="contato.html">Contato</a>
+    <a href="contatoingles.html">Contact</a>
   </nav>
   </div>
 
@@ -204,56 +204,39 @@
   </style>
 
   <!-- HTML -->
-
-  <h1>Nossas Linhas de Pesquisa atuais</h1>
+  <h1>Our Current Research Lines</h1>
   <section class="pesquisa-container">
     <div class="pesquisa-card">
-      <img src="Assets/imagem' 112.jpg" class="pesquisa-imagem" alt="Imagem 1">
-      <div class="pesquisa-titulo">Estudo da resposta imune e dos mecanismos associados à malária nas infecções por
-        <i>Plasmodium vivax</i> </div>
-      <button class="botao-saiba-mais" onclick="abrirModal('modal1')">Saiba mais</button>
+      <img src="../Assets/imagem' 112.jpg" class="pesquisa-imagem" alt="Image 1">
+      <div class="pesquisa-titulo">Study of the immune response and mechanisms associated with malaria in
+        <i>Plasmodium vivax</i> infections</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal1')">Learn more</button>
     </div>
 
     <div class="pesquisa-card">
-      <img src="Assets/malaria aviaria.png" class="pesquisa-imagem" alt="Imagem 2">
-      <div class="pesquisa-titulo">Hemosporídeos em aves silvestres brasileiras: estudo da diverisidade genética e do efeito da degradação de habitats</div>
-      <button class="botao-saiba-mais" onclick="abrirModal('modal2')">Saiba mais</button>
+      <img src="../Assets/malaria aviaria.png" class="pesquisa-imagem" alt="Image 2">
+      <div class="pesquisa-titulo">Haemosporidians in Brazilian wild birds: study of genetic diversity and the effect of habitat degradation</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal2')">Learn more</button>
     </div>
 
     <div class="pesquisa-card">
-      <img src="Assets/imagem luiz.jpg" class="pesquisa-imagem" alt="Imagem 4">
-      <div class="pesquisa-titulo">Taxonomia integrativa para estudo de hemosporídeos (Apicomplexa: Haemosporida) em
-        aves e répteis silvestres brasileiros</div>
-      <button class="botao-saiba-mais" onclick="abrirModal('modal4')">Saiba mais</button>
+      <img src="../Assets/imagem luiz.jpg" class="pesquisa-imagem" alt="Image 4">
+      <div class="pesquisa-titulo">Integrative taxonomy for the study of haemosporidians (Apicomplexa: Haemosporida) in Brazilian wild birds and reptiles</div>
+      <button class="botao-saiba-mais" onclick="abrirModal('modal4')">Learn more</button>
     </div>
   </section>
 
-  <!-- Modais -->
+  <!-- Modals -->
   <!-- Modal 1 -->
   <div id="modal1" class="modal-overlay" onclick="fecharModal(event)">
     <div class="modal-conteudo">
       <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
 
-      <h2>Estudo da resposta imune e dos mecanismos associados à malária nas infecções por <i>Plasmodium vivax</i> </h2>
+      <h2>Study of the immune response and mechanisms associated with malaria in <i>Plasmodium vivax</i> infections</h2>
       <p style="text-align: justify;">
-        A anemia na malária vivax tem caráter multifatorial e não decorre apenas da destruição dos reticulócitos que
-        correspondem a 1-2% dos eritrócitos circulantes, mas principalmente do <i>clearance</i> de eritrócitos não infectados.
-        Nosso
-        grupo de pesquisa demonstrou que IgGs dirigidas contra componentes dos eritrócitos estão relacionados à remoção
-        de
-        hemácias saudáveis por duas vias: lise mediada pelo complemento e indução da redução da deformabilidade da
-        membrana
-        promovendo a fagocitose dos eritrócitos <i>in vitro</i>. Esses dois mecanismos são modulados por padrões de
-        N-glicosilação da
-        porção Fc de IgGs desencadeando respostas anti e pró-inflamatórias que podem definir quadros de maior ou menor
-        gravidade
-        em doenças infecciosas. Desta forma, buscamos analisar padrões de N-glicosilação das IgGs em pacientes com ou
-        sem
-        anemia, identificar biomarcadores de anemia, acompanhar mudanças após o tratamento específico e estudar a
-        funcionalidade
-        dessas imunoglobulinas em testes laboratoriais <i>in vitro</i>.
+        Anemia in vivax malaria is multifactorial and not only the result of the destruction of reticulocytes, which correspond to 1–2% of circulating erythrocytes, but mainly due to the <i>clearance</i> of uninfected erythrocytes. Our research group has shown that IgGs directed against erythrocyte components are related to the removal of healthy red blood cells by two pathways: complement-mediated lysis and induction of reduced membrane deformability, promoting the phagocytosis of erythrocytes <i>in vitro</i>. These two mechanisms are modulated by N-glycosylation patterns of the IgG Fc portion, triggering anti- and pro-inflammatory responses that can define more or less severe clinical outcomes in infectious diseases. Thus, we aim to analyze N-glycosylation patterns of IgGs in patients with or without anemia, identify biomarkers of anemia, monitor changes after specific treatment, and study the functionality of these immunoglobulins in laboratory <i>in vitro</i> assays.
       </p>
-      <img src="Assets/imagem' 112.jpg" alt="Imagem Modal 1"
+      <img src="../Assets/imagem' 112.jpg" alt="Image Modal 1"
         style="width:100%; border-radius: 8px; margin-bottom: 15px;">
     </div>
   </div>
@@ -263,19 +246,11 @@
     <div class="modal-conteudo">
       <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
 
-      <h2>Hemosporídeos em aves silvestres brasileiras: estudo da diversidade genética e do efeito da degradação de habitats</h2>
+      <h2>Haemosporidians in Brazilian wild birds: study of genetic diversity and the effect of habitat degradation</h2>
       <p style="text-align: justify;">
-        As ações humanas como desmatamento, urbanização, introdução de espécies exóticas e mudanças climáticas, geram impacto
-        negativo nos ecossistemas silvestres, resultando na diminuição da diversidade de espécies e alterações da transmissão de
-        patógenos. Infecções parasitárias são frequentes, mas o efeito negativo ou positivo dessas em populações silvestres tem
-        sido negligenciado, embora se reconheça a relevância do tema para subsidiar medidas eficazes de conservação da vida
-        silvestre. Os hemosporídeos aviários (<i>Plasmodium/Haemoproteus/Leucocytozoon</i>) são hemoparasitos transmitidos por vetores
-        e têm ampla distribuição, constituindo modelos ideais para estudos desta natureza. Para isso, temos analisado se e como
-        os fatores dos hospedeiros (sexo, idade, condição corporal, perfil de proteínas plasmáticas, etc.), dos parasitos
-        (identidade taxonômica, parasitemia, diversidade genética), climáticos (sazonalidade, temperatura, umidade) e evolutivos
-        (filogenia dos hospedeiros e parasitos) influenciam a dinâmica de transmissão destes parasitos.
+        Human actions such as deforestation, urbanization, introduction of exotic species, and climate change negatively impact wild ecosystems, leading to reduced species diversity and altered pathogen transmission. Parasitic infections are frequent, but their negative or positive effects on wild populations have been neglected, even though their relevance for effective wildlife conservation measures is recognized. Avian haemosporidians (<i>Plasmodium/Haemoproteus/Leucocytozoon</i>) are vector-transmitted blood parasites with wide distribution, constituting ideal models for studies of this nature. To this end, we have been analyzing whether and how host factors (sex, age, body condition, plasma protein profile, etc.), parasite factors (taxonomic identity, parasitemia, genetic diversity), climatic variables (seasonality, temperature, humidity), and evolutionary aspects (phylogeny of hosts and parasites) influence the transmission dynamics of these parasites.
       </p>
-      <img src="Assets/malaria aviaria.png" alt="Imagem Modal 2"
+      <img src="../Assets/malaria aviaria.png" alt="Image Modal 2"
         style="width:100%; border-radius: 8px; margin-bottom: 15px;">
     </div>
   </div>
@@ -285,27 +260,13 @@
     <div class="modal-conteudo">
       <span class="modal-fechar" onclick="fecharModal(event)">✖</span>
 
-      <h2>Taxonomia integrativa para estudo de hemosporídeos (Apicomplexa: Haemosporida) em aves e répteis silvestres
-        brasileiros</h2>
+      <h2>Integrative taxonomy for the study of haemosporidians (Apicomplexa: Haemosporida) in Brazilian wild birds and reptiles</h2>
       <p style="text-align: justify;">
-        A ordem Haemosporida está dividida em quatro famílias: Leucocytozoidae, Haemoproteidae, Garniidae, que infectam aves e
-        répteis, e Plasmodiidae, que afeta aves, répteis e mamíferos, utilizando insetos dípteros como vetores. Apesar dos
-        avanços na descrição de espécies de <i>Plasmodium</i> e <i>Haemoproteus</i>, especialmente em aves, o conhecimento sobre outros
-        hemosporídeos que parasitam a fauna silvestre permanece fragmentado. O gênero <i>Leucocytozoon</i>, que infecta aves
-        mundialmente, é pouco estudado no Brasil e raros são os artigos que abordam a sua caracterização. <i>Leucozytozoon
-        cariamae</i>, um parasito que infecta seriemas (aves endêmicas do Brasil) constitui a única espécie descrita em nosso país
-        tendo a sua caracterização morfológica, molecular e filogenética realizada por nosso grupo. Outros gêneros
-        negligenciados da ordem Haemosporida são <i> Plasmodium, Saurocytozoon, Haemocystidium e Fallisia </i> que infectam répteis. A
-        classificação desses parasitos e a validação de alguns gêneros e espécies é controversa, reforçando a necessidade de
-        estudos integrativos que englobem análises morfológicas, moleculares e evolutivas. Nosso grupo tem descrito novas
-        espécies de hemosporídeos que infectam aves e répteis associando dados de sequências de genes mitocondriais completos às
-        características morfológicas e assim, contribuindo para um entendimento mais profundo da sua diversidade e evolução.
-      </p>
-      <img src="Assets/imagem luiz.jpg" alt="Imagem Modal 4"
+        The order Haemosporida is divided into four families: Leucocytozoidae, Haemoproteidae, Garniidae, which infect birds and reptiles, and Plasmodiidae, which affect birds, reptiles, and mammals, using dipteran insects as vectors. Despite advances in the description of <i>Plasmodium</i> and <i>Haemoproteus</i> species, especially in birds, knowledge about other haemosporidians parasitizing wild fauna remains fragmented. The genus <i>Leucocytozoon</i>, which infects birds worldwide, is poorly studied in Brazil, and few articles address its characterization. <i>Leucozytozoon cariamae</i>, a parasite infecting seriemas (birds endemic to Brazil), is the only species described in our country, with morphological, molecular, and phylogenetic characterization carried out by our group. Other neglected genera of the order Haemosporida include <i>Plasmodium, Saurocytozoon, Haemocystidium,</i> and <i>Fallisia</i>, which infect reptiles. The classification of these parasites and the validation of some genera and species is controversial, highlighting the need for integrative studies encompassing morphological, molecular, and evolutionary analyses. Our
+        <img src="../Assets/imagem luiz.jpg" alt="Imagem Modal 4"
         style="width:100%; border-radius: 8px; margin-bottom: 15px;">
     </div>
   </div>
-
   <!-- JavaScript -->
   <script>
     function abrirModal(id) {
@@ -322,8 +283,8 @@
     }
   </script>
 
-  <!-- Rodapé -->
-  <footer class="footer">
+   <!-- Rodapé -->
+   <footer class="footer">
     <div class="footer-container">
 
       <!-- Coluna Esquerda -->
@@ -333,33 +294,33 @@
         </h3>
         <br>
         <p><strong>
-            Endereço:
-          </strong><br>
-          Campus UFMG: Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901
-          ICB, Bloco E4, Sala 167 - Laboratório de Malária e Genômica de Parasitos (LMGP)
-
+          Address:
+        </strong><br>
+        Campus UFMG: Av. Pres. Antônio Carlos, 6627 - Pampulha, Belo Horizonte - MG, 31270-901
+        ICB, Bloco E4, Sala 167 - Laboratório de Malária e Genômica de Parasitos (LMGP)
+        
         </p>
       </div>
 
       <!-- Coluna Central -->
       <div class="footer-logos">
         <a href="https://www.icb.ufmg.br">
-          <img class="footer-logo" src="Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
+          <img class="footer-logo" src="../Assets/images-removebg-preview.png" alt="Logo ICB-UFMG">
         </a>
         <a href="https://ufmg.br/">
-          <img class="footer-logo" src="Assets/logo_ufmg_2.png" alt="Logo UFMG">
+          <img class="footer-logo" src="../Assets/logo_ufmg_2.png" alt="Logo UFMG">
         </a>
         <a href="http://www.fapemig.br/pt/">
-          <img class="footer-logo" src="Assets/fapemigfooter.png" alt="Logo Fapemig">
+          <img class="footer-logo" src="../Assets/fapemigfooter.png" alt="Logo Fapemig">
         </a>
         <a href="https://www.gov.br/cnpq/pt-br">
-          <img class="footer-logo" src="Assets/cnpqmenor.png" alt="Logo CNPQ">
+          <img class="footer-logo" src="../Assets/cnpqmenor.png" alt="Logo CNPQ">
         </a>
-        <a href="">
-          <img class="footer-logo" src="Assets/LMGP.jpeg" alt="Logo CNPQ">
+        <a href="" >
+          <img class="footer-logo" src="../Assets/LMGP.jpeg" alt="Logo CNPQ">
         </a>
         <a href="https://www.gov.br/capes/pt-br" >
-          <img class="footer-logo" src="Assets/capsfooter.png" alt="Logo CNPQ">
+          <img class="footer-logo" src="../Assets/capsfooter.png" alt="Logo CNPQ">
         </a>
 
       </div>
@@ -367,22 +328,21 @@
       <!-- Coluna Direita -->
       <div class="footer-right">
         <form class="search-box" onsubmit="buscar(event)">
-          <input type="text" id="campoBusca" placeholder="Buscar">
+          <input type="text" id="campoBusca" placeholder="Search">
           <button type="submit">
-            <img src="Assets/lupa.png" alt="Pesquisar" />
+            <img src="../Assets/lupa.png" alt="Pesquisar" />
           </button>
         </form>
       </div>
     </div>
 
     <div style="text-align: center; margin-top: 20px;">
-      Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg;Todos os direitos reservados
+      Grupo de Estudos Interdisciplinares em Malária (GEIM) &copy; 2025 | &reg; All rights reserved
     </div>
   </footer>
-
   <!-- Scripts -->
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 
 </body>
 
