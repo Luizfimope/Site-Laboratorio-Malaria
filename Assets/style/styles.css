@@ -1641,444 +1641,228 @@ background-color: #005f56;
 
 
 
-
-
 /* =============================================
-   📱 Responsividade — overrides mobile‑first
-   Cole este bloco AO FINAL do seu styles.css
-   para não precisar refatorar tudo agora.
+   📱 Responsividade — overrides mobile-first (limpo)
+   Cole AO FINAL do seu styles.css
    ============================================= */
 
 /* 1) Variáveis e tipografia fluida */
-:root{
-  --max-content:1200px;
-  --brand:#00796b;
-}
-html{scroll-behavior:smooth}
-body{font-family:Arial, Helvetica, sans-serif;}
-/* Tamanhos que escalam entre mobile e desktop */
-:root{font-size:clamp(14px, 1.6vw, 18px)}
+:root{ --max-content:1200px; --brand:#00796b; font-size:clamp(14px,1.6vw,18px); }
+html{ scroll-behavior:smooth; }
+body{ font-family:Arial, Helvetica, sans-serif; }
 
 /* 2) Imagens sempre fluidas */
-img{max-width:100%;height:auto}
+img{ max-width:100%; height:auto; }
 
 /* 3) Topo com overlay garantindo nav acima */
-.topo{padding:clamp(12px,4vw,28px)}
-.topo::before{z-index:0}
-.topo>*{z-index:1}
+.topo{ padding:clamp(12px,4vw,28px); }
+.topo::before{ z-index:0; }
+.topo>*{ z-index:1; }
 
-/* 4) Logo gigante no desktop, compacta no mobile */
-.imagem{width:auto;max-width:min(80vw,420px)}
-@media(min-width:992px){
-  .imagem{max-width:760px}
-}
+/* 4) Logo: compacta no mobile, amplia no desktop */
+.imagem{ width:auto; max-width:min(80vw,420px); }
+@media (min-width:992px){ .imagem{ max-width:760px; } }
 
-/* 5) Botão de tradução: posição estável e tamanho responsivo */
-.translate-button{position:fixed;top:12px;right:12px;z-index:10000;background:transparent;padding:0;border:none}
-.translate-button img{width:36px}
-@media(min-width:768px){.translate-button img{width:44px}}
-
-/* 6) Navegação: mobile escondida + hambúrguer via .is-open */
-/* Adicione um botão .nav-toggle no HTML (já te deixei o snippet) */
-.nav-toggle{display:inline-block;margin:.25rem 1rem;font-size:1rem;background:#fff;border:1px solid #ddd;border-radius:6px;padding:.5rem .75rem}
-.container-navegacao{display:none;flex-direction:column;gap:.25rem;background:rgba(0,0,0,0.35);backdrop-filter:saturate(120%) blur(6px);padding:.5rem 1rem;border-radius:10px}
-.container-navegacao.is-open{display:flex}
-.container-navegacao a{font-size:clamp(14px,2.6vw,18px);padding:.6rem .8rem}
-
-/* Submenus: por padrão fechados no mobile; abrir via classe .open */
-.dropdown{position:relative}
-.dropdown .dropdown-content{position:static;display:none;background:#74b4a3;border-radius:8px;margin:.25rem 0}
-.dropdown.open .dropdown-content{display:block}
-
-/* Desktop: volta para layout horizontal e hover */
-@media(min-width:768px){
-  .nav-toggle{display:none}
-  .container-navegacao{display:flex;flex-direction:row;justify-content:center;gap:.25rem;background:var(--brand)}
-  .container-navegacao a{line-height:1.6}
-  .dropdown{position:relative}
-  .dropdown .dropdown-content{position:absolute;left:0;top:100%;display:none;min-width:220px;background:#74b4a3;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-  .dropdown:hover .dropdown-content{display:block}
-}
-
-/* 7) Efeito de parallax pesado em mobile → desabilitar */
-@media(max-width:767px){
-  .welcome-section{background-attachment:initial;height:auto;min-height:86px;padding:12px}
-  .welcome-section h2{font-size:clamp(20px,6vw,28px);white-space:normal;border-right:0;animation:none}
-}
-
-/* 8) Swiper: alturas responsivas */
-.swiper{width:100%;max-width:1200px}
-/* Usa aspect-ratio quando possível */
-.swiper{aspect-ratio:16/9;height:auto}
-@supports not (aspect-ratio: 1/1){
-  .swiper{height:56.25vw;max-height:600px}
-}
-@media(max-width:450px){
-  .swiper{aspect-ratio:16/9}
-}
-
-/* 9) Blocos centrais que estavam com width:60% → tornam-se max-width */
-.container-quemsomos .servico,
-.video,
-.redes-sociais{width:100%;max-width:900px;padding:clamp(16px,3.5vw,40px);margin:40px auto}
-
-/* Texto do quem somos */
-.container-quemsomos .servico .servico-texto{font-size:1rem}
-
-/* Redes sociais: ícones quebram para baixo no mobile */
-.redes-sociais .imagens-container{flex-wrap:wrap}
-.redes-sociais img{width:64px}
-
-/* 10) Cards de membros: usa grid elástico */
-.membros-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.membro{width:100%;display:flex;flex-direction:column}
-
-/* 11) Imagem + texto lado a lado → empilhar no mobile */
-.imagem-com-texto .conteudo{flex-wrap:wrap;gap:16px;width:min(92vw,1000px)}
-.imagem-lado{width:100%;max-width:420px;margin:0 auto}
-.texto-lado{width:100%;padding:0}
-
-/* 12) Página conteúdos / placas */
-.placa-trabalho img{width:100%;max-width:500px;height:auto}
-
-/* 13) Formulário de contato: botão full em telas pequenas */
-@media(max-width:768px){
-  .form-container button{width:100%}
-}
-
-/* 14) Mapa responsivo */
-.map2-container{width:min(92vw,800px)}
-#map2{height:420px}
-@media(max-width:480px){#map2{height:300px}}
-
-/* 15) Footer: empilha colunas; logos com grid adaptável */
-.footer-container{display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:900px){.footer-container{grid-template-columns:repeat(3,1fr)}}
-.footer-logos{grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:16px 24px}
-.footer-logo{width:90%;max-width:120px}
-.last-logo-wrapper{grid-column:1 / -1;justify-self:center;margin-top:0}
-
-/* 16) Assistente virtual: tamanhos adequados + caixa que cabe na tela */
-.assistente-virtual{right:12px}
-.assistente-virtual img{width:72px}
-@media(min-width:768px){.assistente-virtual img{width:96px}}
-.chat-box{width:min(92vw,360px);max-height:70vh}
-
-/* 17) Notícias (cards) já estão em grid; apenas garante respiro */
-.noticias-container{padding:0 16px}
-
-/* 18) Acessibilidade utilitária */
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* 19) Pequenos ajustes visuais coerentes */
-.noticia-conteudo h3{font-size:clamp(1.1rem,2.4vw,1.4rem)}
-.container-navegacao a:hover{background-color:#74b4a3;border-radius:10px}
-/* NAV visível por padrão no desktop */
-@media (min-width: 768px){
-  .container-navegacao { display: flex !important; }
-}
-
-/* No mobile, fica oculta até o botão abrir */
-@media (max-width: 767px){
-  .container-navegacao { display: none !important; }
-  .container-navegacao.is-open { display: flex !important; flex-direction: column; }
-}
-
-/* === MOBILE: nav compacta em "cubo" e cor igual à barra antiga === */
-@media (max-width: 767px){
-  /* botão */
-  .nav-toggle{
-    display:inline-block;
-    margin: 10px auto 6px auto;
-    font-size: 15px;
-    background:#1e6b57;
-    border:1px solid #1e6b57;
-    border-radius:10px;
-    padding: 8px 12px;
+/* 5) Botão de tradução — desktop e mobile com “quadrado branco” */
+@media (min-width:768px){
+  .translate-button{
+    position:fixed !important; top:20px !important; right:20px !important;
+    background:#fff !important; border:1px solid rgba(0,0,0,.08) !important;
+    border-radius:10px !important; padding:6px !important;
+    box-shadow:0 2px 10px rgba(0,0,0,.12) !important; z-index:10000 !important;
   }
-
-  /* container da nav como "cubo" compacto */
-  .container-navegacao{
-    display:none;                /* fica oculta até abrir com .is-open */
-    flex-direction:column;
-    gap: 4px;
-    background: #1e6b57;        /* cor próxima da sua barra anterior (#00796b) */
-    color:#1e6b57;
-    width: fit-content;          /* encolhe ao conteúdo */
-    max-width: calc(100vw - 24px);
-    margin: 6px auto 12px auto;  /* centraliza e dá um respiro */
-    padding: 6px 8px;            /* reduz o “retângulo” */
-    border-radius: 12px;         /* deixa com cara de “cubo” arredondado */
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  .translate-button img{ width:28px !important; height:auto !important; display:block; }
+}
+@media (max-width:480px){
+  .translate-button{
+    position:fixed !important;
+    top:calc(8px + env(safe-area-inset-top)) !important;
+    right:calc(8px + env(safe-area-inset-right)) !important;
+    background:#fff !important; border:1px solid rgba(0,0,0,.06) !important;
+    border-radius:10px !important; padding:6px !important;
+    box-shadow:0 2px 10px rgba(0,0,0,.15) !important; z-index:10000 !important;
   }
-
-  /* quando aberta */
-  .container-navegacao.is-open{ display:flex; }
-
-  /* links mais compactos */
-  .container-navegacao a{
-    font-size: 16px !important;
-    padding: 8px 10px;
-    line-height: 1.2;
-    border-radius: 8px;
-  }
-
-  /* hover/active */
-  .container-navegacao a:hover{
-    background: rgba(255,255,255,.12);
-  }
-
-  /* dropdown no mobile: abre dentro do mesmo “cubo” */
-  .dropdown .dropdown-content{
-    position: static;
-    display: none;
-    background: rgba(0,0,0,.12);  /* leve contraste dentro do cubo */
-    border-radius: 8px;
-    margin: 2px 0 0 0;
-    box-shadow: none;
-  }
-  .dropdown.open .dropdown-content{ display:block; }
-
-  .dropdown-content a{
-    padding: 8px 10px;
-    color:#fff;
-  }
+  .translate-button img{ width:22px !important; height:auto !important; display:block; }
 }
 
-/* === DESKTOP: mantém sua barra cheia como antes === */
-@media (min-width: 768px){
+/* 6) Navegação — mobile-first */
+.nav-toggle{
+  display:inline-block; margin:.25rem 1rem; font-size:1rem;
+  background:#00796b; color:#fff; border:1px solid #006459; border-radius:10px; padding:.5rem .75rem;
+}
+.container-navegacao{
+  display:none; flex-direction:column; gap:.25rem;
+  background:#1e6b57; color:#fff; padding:.5rem 1rem; border-radius:10px;
+  width:fit-content; max-width:calc(100vw - 24px); margin:6px auto 12px;
+  position:relative; z-index:12;
+}
+.container-navegacao.is-open{ display:flex; }
+.container-navegacao a{
+  color:#fff; font-size:clamp(14px,2.6vw,18px); padding:.6rem .8rem; line-height:1.2; border-radius:8px;
+}
+.container-navegacao a:hover{ background:rgba(255,255,255,.12); }
+
+/* Submenus no mobile: dentro do “cubo” */
+.dropdown{ position:relative; }
+.dropdown .dropdown-content{
+  display:none; position:static; margin:.25rem 0; background:rgba(0,0,0,.12);
+  border-radius:8px; box-shadow:none;
+}
+.dropdown .dropdown-content a{ color:#fff; padding:8px 10px; }
+
+/* Desktop: barra cheia + hover */
+@media (min-width:768px){
   .nav-toggle{ display:none; }
   .container-navegacao{
-    display:flex !important;
-    background:#00796b;  /* cor original de desktop */
-    width: 100%;
-    max-width: 1500px;
-    margin: auto;
-    padding: 10px 0;
-    border-radius: 10px;
+    display:flex !important; flex-direction:row; justify-content:center; gap:.25rem;
+    background:var(--brand) !important; color:#fff !important; width:100%; max-width:1500px;
+    margin:auto; padding:10px 0; border-radius:10px; z-index:10;
   }
+  .container-navegacao a{ color:#fff !important; line-height:1.6; }
+
+  .dropdown{ position:relative; }
   .dropdown .dropdown-content{
-    position:absolute; left:0; top:100%;
-    display:none; min-width:220px; background:#74b4a3;
-    border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,.12);
+    position:absolute; left:0; top:100%; min-width:220px; background:#74b4a3;
+    border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,.12); display:none; z-index:1000;
   }
-  .dropdown:hover .dropdown-content{ display:block; }
+  .dropdown:hover > .dropdown-content{ display:block; }
 }
 
+/* 7) Welcome: remove parallax pesado no mobile */
+@media (max-width:767px){
+  .welcome-section{ background-attachment:initial; height:auto; min-height:86px; padding:12px; }
+  .welcome-section h2{ font-size:clamp(20px,6vw,28px); white-space:normal; border-right:0; animation:none; }
+}
 
-.nav-toggle{ color:#fff !important; background:#00796b !important; }
+/* 8) Swiper responsivo (preferir aspect-ratio) */
+.swiper{ width:100%; max-width:1200px; aspect-ratio:16/9; height:auto; }
+@supports not (aspect-ratio: 1/1){ .swiper{ height:56.25vw; max-height:600px; } }
+@media (max-width:450px){ .swiper{ aspect-ratio:16/9; } }
 
-/* MOBILE: dropdown aparece quando o .dropdown recebe .open */
+/* 9) Blocos centrais (antes 60%) → elásticos */
+.container-quemsomos .servico, .video, .redes-sociais{
+  width:100%; max-width:900px; padding:clamp(16px,3.5vw,40px); margin:40px auto;
+}
+.container-quemsomos .servico .servico-texto{ font-size:1rem; }
+.redes-sociais .imagens-container{ flex-wrap:wrap; }
+.redes-sociais img{ width:64px; }
+
+/* 10) Cards de membros em grid elástico */
+.membros-container{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+.membro{ width:100%; display:flex; flex-direction:column; }
+
+/* 11) Imagem + texto lado a lado → empilhar no mobile */
+.imagem-com-texto .conteudo{ flex-wrap:wrap; gap:16px; width:min(92vw,1000px); }
+.imagem-lado{ width:100%; max-width:420px; margin:0 auto; }
+.texto-lado{ width:100%; padding:0; }
+
+/* 12) Conteúdos / placas */
+.placa-trabalho img{ width:100%; max-width:500px; height:auto; }
+
+/* 13) Formulário: botão 100% no mobile */
+@media (max-width:768px){ .form-container button{ width:100%; } }
+
+/* 14) Mapa */
+.map2-container{ width:min(92vw,800px); }
+#map2{ height:420px; }
+@media (max-width:480px){ #map2{ height:300px; } }
+
+/* 15) Footer responsivo */
+.footer-container{ display:grid; grid-template-columns:1fr; gap:20px; }
+@media (min-width:900px){ .footer-container{ grid-template-columns:repeat(3,1fr); } }
+.footer-logos{ grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); gap:16px 24px; }
+.footer-logo{ width:90%; max-width:120px; }
+.last-logo-wrapper{ grid-column:1 / -1; justify-self:center; margin-top:0; }
+
+/* 16) Assistente virtual */
+.assistente-virtual{ right:12px; }
+.assistente-virtual img{ width:72px; }
+@media (min-width:768px){ .assistente-virtual img{ width:96px; } }
+.chat-box{ width:min(92vw,360px); max-height:70vh; }
+
+/* 17) Notícias: respiro lateral */
+.noticias-container{ padding:0 16px; }
+
+/* 18) Acessibilidade utilitária */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* 19) Ajustes finos */
+.noticia-conteudo h3{ font-size:clamp(1.1rem,2.4vw,1.4rem); }
+.container-navegacao a:hover{ background-color:#74b4a3; border-radius:10px; }
+
+/* 📱 Mobile: reduzir o tamanho do botão e do retângulo do menu */
 @media (max-width: 767px){
-  .dropdown .dropdown-content{ display:none; position: static; }
-  .dropdown.open > .dropdown-content{ display:block; }
+  /* Botão Menu menor e centrado */
+  .nav-toggle{
+    display:block !important;
+    margin: 8px auto !important;         /* centraliza */
+    font-size: 14px !important;          /* menor */
+    padding: 8px 15px !important;        /* menos alto/largo */
+    line-height: 1.1 !important;
+    min-width: 0 !important;             /* evita esticar */
+    width: fit-content !important;       /* fica do tamanho do texto */
+  }
+
+  /* “Retângulo” do menu (cubo) mais compacto */
+  .container-navegacao{
+    border-radius: 2 !important;         /* se quiser cantos retos; remova p/ arredondado */
+  }
+
+
 }
 
-/* DESKTOP: garante z-index e hover funcionando por cima de outros elementos */
-@media (min-width: 768px){
-  .container-navegacao{ position: relative; z-index: 10; }
-  .dropdown{ position: relative; }
+/* 📱 MOBILE: dropdown desligado — mostrar tudo aberto */
+@media (max-width: 767px){
+  /* o link “pai” vira só um rótulo (não clica) */
+  .dropdown > a{
+    pointer-events: none;         /* desativa clique */
+    cursor: default;
+    opacity: .95;
+    padding-bottom: 4px;
+  }
+
+  /* submenu SEMPRE visível, dentro do “cubo” da nav */
   .dropdown .dropdown-content{
-    position:absolute; left:0; top:100%;
-    display:none; min-width:220px;
-    background:#74b4a3; border-radius:6px;
-    box-shadow:0 8px 24px rgba(0,0,0,.12);
+    display: block !important;    /* sempre aberto */
+    position: static !important;  /* não flutua */
+    margin: 2px 0 6px 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* estilo das opções internas */
+  .dropdown .dropdown-content a{
+    display: block;
+    padding: 6px 10px !important;
+    color: #fff !important;       /* mantém contraste no seu fundo verde */
+    line-height: 1.25;
+  }
+
+  /* se quiser uma leve indentação/guia à esquerda */
+  .dropdown .dropdown-content a{
+    border-left: 3px solid rgba(255,255,255,.25);
+    margin-left: 4px;
+  }
+}
+
+/* 🖥️ DESKTOP: mantém hover normal */
+@media (min-width: 768px){
+  .dropdown:hover > .dropdown-content{ display: block; }
+  .dropdown .dropdown-content{
+    position: absolute; left: 0; top: 100%;
+    min-width: 220px; background: #74b4a3;
+    border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    display: none;
     z-index: 1000;
   }
-  .dropdown:hover > .dropdown-content{ display:block; }
 }
 
 
-/* Dropdown: abre no clique (todas as larguras) */
-.dropdown .dropdown-content{
-  display: none;
-  position: absolute;
-  left: 0; top: 100%;
-  min-width: 220px;
-  background: #74b4a3;
-  border-radius: 6px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  z-index: 1000;
-}
-
-/* Mostrar quando o item tem a classe .open */
-.dropdown.open > .dropdown-content{
-  display: block;
-}
-
-/* Se no mobile seu menu vira coluna, você pode deixar o submenu “dentro do cubo” */
-@media (max-width: 767px){
-  .dropdown .dropdown-content{
-    position: static;          /* fica dentro do bloco da nav */
-    box-shadow: none;
-    margin-top: 4px;
-    border-radius: 8px;
-  }
-}
-
-/* ===== FINAL AUTHORITATIVE NAV RULES (não edite acima) ===== */
-
-/* Botão hambúrguer — texto branco */
-.nav-toggle{
-  color:#fff !important;
-  background:#00796b !important;
-  border:1px solid #006459 !important;
-  border-radius:10px;
-}
-
-/* Base do dropdown: por clique (todas as larguras) */
-.dropdown .dropdown-content{
-  display:none;
-  position:absolute;
-  left:0; top:100%;
-  min-width:220px;
-  background:#74b4a3;
-  border-radius:6px;
-  box-shadow:0 8px 24px rgba(0,0,0,.12);
-  z-index:1000;
-}
-.dropdown.open > .dropdown-content{ display:block; }
-
-/* Desktop */
-@media (min-width:768px){
-  .nav-toggle{ display:none !important; }
-  .container-navegacao{
-    display:flex !important;
-    flex-direction:row;
-    justify-content:center;
-    gap:.25rem;
-    background:#00796b !important;
-    color:#fff !important;
-    width:100%;
-    max-width:1500px;
-    margin:auto;
-    padding:10px 0;
-    border-radius:10px;
-    position:relative; z-index:10; /* garante sobreposição */
-  }
-  .container-navegacao a{ color:#fff !important; }
-  /* Hover ainda funciona no desktop */
-  .dropdown:hover > .dropdown-content{ display:block; }
-}
-
-/* Mobile: nav em “cubo”, texto branco */
-@media (max-width:767px){
-  /* nav fica oculta até abrir */
-  .container-navegacao{
-    display:none !important;
-    flex-direction:column;
-    gap:4px;
-    background:#1e6b57 !important; /* cor da barra anterior */
-    color:#fff !important;          /* <-- texto branco */
-    width:fit-content;
-    max-width:calc(100vw - 24px);
-    margin:6px auto 12px auto;
-    padding:6px 8px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
-    position:relative; z-index:12; /* acima de overlays */
-  }
-  .container-navegacao.is-open{ display:flex !important; }
-
-  .container-navegacao a{
-    color:#fff !important;          /* <-- links brancos */
-    font-size:16px !important;
-    padding:8px 10px;
-    line-height:1.2;
-    border-radius:8px;
-  }
-  .container-navegacao a:hover{
-    background:rgba(255,255,255,.12);
-  }
-
-  /* Submenu “dentro do cubo” no mobile */
-  .dropdown .dropdown-content{
-    position:static;
-    box-shadow:none;
-    margin-top:4px;
-    background:rgba(0,0,0,.12);
-    border-radius:8px;
-  }
-  .dropdown-content a{ color:#fff !important; }
-}
-
-/* 📱 Mobile: bandeira com “quadrado branco” menor, arredondado */
-@media (max-width: 480px){
-  .translate-button{
-    position: fixed !important;
-    top: calc(8px + env(safe-area-inset-top)) !important;
-    right: calc(8px + env(safe-area-inset-right)) !important;
-    background: #fff !important;          /* mantém o quadrado branco */
-    border: 1px solid rgba(0,0,0,.06) !important;
-    border-radius: 10px !important;        /* arredondado como no desktop */
-    padding: 6px !important;               /* área de toque ~36–40px */
-    box-shadow: 0 2px 10px rgba(0,0,0,.15) !important;
-    z-index: 10000 !important;
-  }
-  .translate-button img{
-    width: 22px !important;                /* ajuste fino do tamanho da bandeira */
-    height: auto !important;
-    display: block;
-  }
-}
-
-/* 🖥️ Desktop: bandeira com quadrado branco arredondado */
-@media (min-width: 768px){
-  .translate-button{
-    position: fixed !important;
-    top: 20px !important;
-    right: 20px !important;
-    background: #fff !important;               /* <- quadrado branco */
-    border: 1px solid rgba(0,0,0,.08) !important;
-    border-radius: 10px !important;            /* cantos arredondados */
-    padding: 6px !important;                   /* “caixa” em volta do ícone */
-    box-shadow: 0 2px 10px rgba(0,0,0,.12) !important;
-    z-index: 10000 !important;
-    display: inline-block;
-  }
-  .translate-button img{
-    width: 28px !important;                    /* ajuste o tamanho se quiser */
-    height: auto !important;
-    display: block;
-  }
-}
-
-/* Desktop: hover funciona normal */
-@media (min-width: 768px){
-  .dropdown:hover > .dropdown-content{ display:block; }
-}
-
-/* Mobile: nada de hover; abre só com .open (via JS) */
-@media (max-width: 767px){
-  .dropdown .dropdown-content{ 
-    display:none;          /* escondido por padrão */
-    position: static;      /* submenu fica dentro do bloco/cubo */
-  }
-  .dropdown.open > .dropdown-content{ 
-    display:block;         /* mostra quando o JS adiciona .open */
-  }
-}
-
-/* Desktop: hover funciona normal */
-@media (min-width: 768px){
-  .dropdown:hover > .dropdown-content{ display:block; }
-}
-
-/* Mobile: nada de hover; abre só com .open (via JS) */
-@media (max-width: 767px){
-  .dropdown .dropdown-content{ 
-    display:none;
-    position: static;       /* submenu fica “dentro do cubo” */
-  }
-  .dropdown.open > .dropdown-content{ 
-    display:block;
-  }
-}
-
-/* (Opcional, à prova de toque): desliga hover em devices sem hover */
-@media (hover: none){
-  .dropdown:hover > .dropdown-content{ display:none !important; }
-}
 
 
 
