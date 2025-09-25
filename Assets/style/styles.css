@@ -1862,6 +1862,75 @@ img{ max-width:100%; height:auto; }
   }
 }
 
+/* 📱 esconder setas do Swiper no mobile */
+@media (max-width: 767px){
+  .swiper-button-prev,
+  .swiper-button-next{
+    display: none !important;
+  }
+}
+
+/* 📱 Só no mobile: vídeos 100% responsivos (16:9) */
+@media (max-width: 767px){
+  .video iframe,
+  .video embed,
+  .video object{
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 0;
+    border-radius: 10px; /* opcional */
+  }
+
+  /* garante que o card não corte nada */
+  .video{
+    width: 100% !important;
+    max-width: 900px;
+    overflow: hidden;
+  }
+}
+
+
+/* 📱 Mobile: centralizar a barra de busca no footer e ajustar tamanhos */
+@media (max-width: 767px){
+  /* bloco da direita do footer passa a centralizar */
+  .footer-right{
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* a caixinha de busca fica centralizada e com largura adequada à tela */
+  .footer-right .search-box{
+    width: min(92vw, 360px) !important;
+    margin: 0 auto 16px auto !important;
+    display: flex !important;
+  }
+
+  /* input ocupa todo o espaço e o botão fica colado no lado direito */
+  .footer-right input{
+    flex: 1 1 auto !important;
+    width: 100% !important;
+  }
+  .footer-right button{
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    /* opcional: igualar altura ao input; ajuste se precisar */
+    padding: 8px 12px !important;
+  }
+
+  /* aumentar o Laveran no mobile */
+  .assistente-virtual img{
+    width: 120px !important;   /* ajuste: 110–140px conforme preferir */
+  }
+  /* posição confortável no canto */
+  .assistente-virtual{
+    right: 12px !important;
+    bottom: 8px !important;
+  }
+}
+
 
 
 
