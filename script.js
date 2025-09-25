@@ -60,7 +60,7 @@ function filtrarConteudo(event) {
       resposta = "Nossa coleção está disponível na aba 'Coleção'.";
     }
   
-    chat.innerHTML += `<p><strong>Eriquinha:</strong> ${resposta}</p>`;
+    chat.innerHTML += `<p><strong>Laveran:</strong> ${resposta}</p>`;
   
     chat.scrollTop = chat.scrollHeight;
     input.value = "";
