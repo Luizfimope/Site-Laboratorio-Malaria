@@ -25,7 +25,8 @@
   </header>
 
   <!-- Barra de Navegação -->
-  <nav class="container-navegacao">
+  <button class="nav-toggle" aria-controls="navMenu" aria-expanded="false">☰ Menu</button>
+  <nav class="container-navegacao" id="navMenu">
     <a href="index.html">Início</a>
 
     <!-- Submenu em "Quem Somos" -->
@@ -194,5 +195,63 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
+
+<script>
+  // Toggle do menu principal (se usar hambúrguer)
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('navMenu');
+  btn?.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Delegação: abre/fecha dropdowns no CLIQUE (desktop e mobile)
+  nav?.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.dropdown > a');
+    if (!trigger) return;
+
+    const item = trigger.parentElement;                 // .dropdown
+    const isOpen = item.classList.toggle('open');       // alterna
+
+    // Fecha os outros
+    if (isOpen) {
+      nav.querySelectorAll('.dropdown.open').forEach(d => {
+        if (d !== item) d.classList.remove('open');
+      });
+    }
+
+    // Acessibilidade
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    // Evita navegar (ex.: href="#")
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  // Fechar ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!nav?.contains(e.target)) {
+      nav?.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+      nav?.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(a => a.setAttribute('aria-expanded','false'));
+    }
+  });
+
+  // Fechar com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      nav?.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+      nav?.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(a => a.setAttribute('aria-expanded','false'));
+    }
+  });
+
+  // Teclado: Enter/Space abrem também
+  nav?.querySelectorAll('.dropdown > a').forEach(a => {
+    a.setAttribute('role','button');
+    a.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { a.click(); e.preventDefault(); }
+    });
+  });
+</script>
 </body>
 </html>

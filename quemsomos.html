@@ -36,7 +36,8 @@
         </header>
 
         <!-- Barra de Navegação -->
-        <nav class="container-navegacao">
+        <button class="nav-toggle" aria-controls="navMenu" aria-expanded="false">☰ Menu</button>
+        <nav class="container-navegacao" id="navMenu">
             <a href="index.html">Início</a>
 
             <!-- Submenu em "Quem Somos" -->
@@ -190,6 +191,36 @@
                 </div>
 
                 <hr>
+                <h2>Alunos de Mestrado</h2>
+
+                <div class="membros-container">
+                    <!-- Vitoria -->
+                    <div class="membro">
+                        <img src="Assets/colaboradores/1.png" alt="Membro 3" class="membro-img">
+                        <div class="membro-info">
+                            <h3>Vitória Loiola Batista</h3>
+                            <p><strong>Posição:</strong> Mestrando.</p>
+                            <p><strong>Tema de Pesquisa:</strong> Análise de hemosporideos em aves em cativeiro e
+                                repteis de vida livre.</p>
+                            <a href="http://lattes.cnpq.br/4138110441220995" target="_blank"
+                                class="lattes-btn">Lattes</a>
+                        </div>
+                    </div>
+
+                    <!-- Pedro -->
+                    <div class="membro">
+                        <img src="Assets/colaboradores/2.png" alt="Membro 3" class="membro-img">
+                        <div class="membro-info">
+                            <h3>Pedro Henrique Oliveira Pereira</h3>
+                            <p><strong>Posição:</strong> Mestrando.</p>
+                            <p><strong>Tema de Pesquisa:</strong> Caracterização taxonômica e molecular de hemosporídeos
+                                em aves brasileiras.</p>
+                            <a href="http://lattes.cnpq.br/4138110441220995" target="_blank"
+                                class="lattes-btn">Lattes</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
                 <h2>Alunos de Iniciação Cientifica</h2>
 
                 <div class="membros-container">
@@ -271,33 +302,6 @@
                                 class="lattes-btn">Lattes</a>
                         </div>
                     </div>
-
-                    <!-- Pedro -->
-                    <div class="membro">
-                        <img src="Assets/colaboradores/2.png" alt="Membro 3" class="membro-img">
-                        <div class="membro-info">
-                            <h3>Pedro Henrique Oliveira Pereira</h3>
-                            <p><strong>Posição:</strong> Aluno de iniciação cientifica.</p>
-                            <p><strong>Tema de Pesquisa:</strong> Caracterização taxonômica e molecular de hemosporídeos
-                                em aves brasileiras.</p>
-                            <a href="http://lattes.cnpq.br/4138110441220995" target="_blank"
-                                class="lattes-btn">Lattes</a>
-                        </div>
-                    </div>
-
-                    <!-- Vitoria -->
-                    <div class="membro">
-                        <img src="Assets/colaboradores/1.png" alt="Membro 3" class="membro-img">
-                        <div class="membro-info">
-                            <h3>Vitória Loiola Batista</h3>
-                            <p><strong>Posição:</strong> Aluna de iniciação cientifica.</p>
-                            <p><strong>Tema de Pesquisa:</strong> Análise de hemosporideos em aves em cativeiro e
-                                repteis de vida livre.</p>
-                            <a href="http://lattes.cnpq.br/4138110441220995" target="_blank"
-                                class="lattes-btn">Lattes</a>
-                        </div>
-                    </div>
-
                     
                 </div>
 
@@ -381,6 +385,64 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        // Toggle do menu principal (se usar hambúrguer)
+        const btn = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('navMenu');
+        btn?.addEventListener('click', () => {
+          const open = nav.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      
+        // Delegação: abre/fecha dropdowns no CLIQUE (desktop e mobile)
+        nav?.addEventListener('click', (e) => {
+          const trigger = e.target.closest('.dropdown > a');
+          if (!trigger) return;
+      
+          const item = trigger.parentElement;                 // .dropdown
+          const isOpen = item.classList.toggle('open');       // alterna
+      
+          // Fecha os outros
+          if (isOpen) {
+            nav.querySelectorAll('.dropdown.open').forEach(d => {
+              if (d !== item) d.classList.remove('open');
+            });
+          }
+      
+          // Acessibilidade
+          trigger.setAttribute('aria-haspopup', 'true');
+          trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      
+          // Evita navegar (ex.: href="#")
+          e.preventDefault();
+          e.stopPropagation();
+        });
+      
+        // Fechar ao clicar fora
+        document.addEventListener('click', (e) => {
+          if (!nav?.contains(e.target)) {
+            nav?.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+            nav?.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(a => a.setAttribute('aria-expanded','false'));
+          }
+        });
+      
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            nav?.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+            nav?.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(a => a.setAttribute('aria-expanded','false'));
+          }
+        });
+      
+        // Teclado: Enter/Space abrem também
+        nav?.querySelectorAll('.dropdown > a').forEach(a => {
+          a.setAttribute('role','button');
+          a.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { a.click(); e.preventDefault(); }
+          });
+        });
+      </script>
 
 </body>
 

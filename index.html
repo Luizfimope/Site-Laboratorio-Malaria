@@ -64,6 +64,7 @@
   </header>
 
   <!-- Barra de Navegação -->
+  <button class="nav-toggle" aria-controls="navMenu" aria-expanded="false">☰ Menu</button>
   <nav class="container-navegacao" id="navMenu">
     <a href="index.html">Início</a>
 
@@ -269,6 +270,58 @@
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 
+
+  <script>
+    // Hambúrguer (se estiver usando)
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('navMenu');
+    btn?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  
+    // Abre/fecha dropdowns no CLIQUE (somente no mobile)
+    nav?.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.dropdown > a');
+      if (!trigger) return;
+  
+      if (window.matchMedia('(max-width: 767px)').matches) {
+        e.preventDefault();                    // não navegar para "#"
+        const item = trigger.parentElement;    // .dropdown
+        const isOpen = item.classList.toggle('open');
+  
+        // fecha os outros submenus
+        nav.querySelectorAll('.dropdown.open').forEach(d => {
+          if (d !== item) d.classList.remove('open');
+        });
+  
+        // acessibilidade
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        e.stopPropagation();
+      }
+    });
+  
+    // Fechar submenus ao clicar fora / ESC (mobile)
+    document.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 767px)').matches && !nav?.contains(e.target)) {
+        nav?.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+        nav?.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(a => a.setAttribute('aria-expanded','false'));
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && window.matchMedia('(max-width: 767px)').matches) {
+        nav?.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+        nav?.querySelectorAll('.dropdown > a[aria-expanded="true"]').forEach(a => a.setAttribute('aria-expanded','false'));
+      }
+    });
+  </script>
+  
+  
+  
+  
+  
+  
 </body>
 </html>
 
