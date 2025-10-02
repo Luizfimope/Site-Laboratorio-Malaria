@@ -102,7 +102,7 @@ z-index: 3;
 
 
 .container-navegacao a {
-  font-size: 22px !important; /* aumentei para 18px */
+  font-size: 19px !important; /* aumentei para 18px */
   font-weight: bold;
   text-decoration: none;
   color: white;
@@ -1930,6 +1930,7 @@ img{ max-width:100%; height:auto; }
     bottom: 8px !important;
   }
 }
+
 
 
 
