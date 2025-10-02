@@ -89,7 +89,7 @@ body, html {
   justify-content: center;
   background-color: rgb(199, 199, 199);
   padding: 10px 0;
-  max-width: 1500px;
+  max-width: 1550px;
   height: auto;
   margin: auto; /* Não precisa mais descer! */
   margin-bottom: 0px;
@@ -1930,6 +1930,7 @@ img{ max-width:100%; height:auto; }
     bottom: 8px !important;
   }
 }
+
 
 
 
